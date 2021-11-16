@@ -1,5 +1,6 @@
-import { Record } from '@/types/models'
 import { model, models, Schema } from 'mongoose'
+
+import { Record } from '@/types/models'
 
 const RecordSchema = new Schema<Record>(
   {

@@ -17,6 +17,7 @@ const patient = async (req: NextApiRequest, res: NextApiResponse) => {
     case GET:
       try {
         const patient = await PatientModel.findById(req.query.id)
+        console.log(patient)
         return res.status(200).json({ patient })
       } catch (err) {
         return res.status(404).json({

@@ -1,5 +1,6 @@
-import { Patient } from '@/types/models'
 import { model, models, Schema } from 'mongoose'
+
+import { Patient } from '@/types/models'
 
 const PatientSchema = new Schema<Patient>(
   {

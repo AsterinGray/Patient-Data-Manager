@@ -1,0 +1,34 @@
+import { NextPage } from 'next'
+import { useEffect, useState } from 'react'
+
+import { getToken } from '@/utils/index'
+
+const withAuth = (Component: NextPage) => {
+  const HOC = (props: any) => {
+    const [isValid, setIsValid] = useState(false)
+
+    useEffect(() => {
+      const accessToken = getToken()
+      if (!accessToken) {
+        localStorage.removeItem('pdmAuthToken')
+        if (typeof window !== undefined) window.location.href = '/login'
+      }
+
+      setIsValid(true)
+    }, [])
+
+    const renderComponent = () => {
+      if (isValid) {
+        return <Component {...props} />
+      } else {
+        return null
+      }
+    }
+
+    return renderComponent()
+  }
+
+  return HOC
+}
+
+export default withAuth
