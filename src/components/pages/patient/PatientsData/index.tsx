@@ -66,7 +66,6 @@ const PatientsData: React.FC<{ searchTerm?: string }> = ({ searchTerm }) => {
       return <Text>No Data Found</Text>
     }
   }
-  console.log(patients)
 
   return (
     <Table>
