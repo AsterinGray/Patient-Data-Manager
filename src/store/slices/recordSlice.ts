@@ -96,7 +96,7 @@ export const editRecord =
   (accessToken: any, id: string, value: Record): AppThunk =>
   async (dispatch: AppDispatch) => {
     try {
-      const res: AxiosResponse<RecordResponse, any> = await api.patch(
+      await api.patch(
         `record/${id}`,
         { ...value },
         {
@@ -114,7 +114,7 @@ export const createRecord =
   (accessToken: any, value: Record): AppThunk =>
   async (dispatch: AppDispatch) => {
     try {
-      const res: AxiosResponse<RecordResponse, any> = await api.post(
+      await api.post(
         `record`,
         { ...value },
         {
@@ -132,7 +132,7 @@ export const getRecordById =
   (accessToken: any, id: any): AppThunk =>
   async (dispatch: AppDispatch) => {
     try {
-      const res: AxiosResponse<Record, any> = await api.get(`record/${id}`, {
+      await api.get(`record/${id}`, {
         headers: {
           Authorization: `Bearer ${accessToken}`,
         },

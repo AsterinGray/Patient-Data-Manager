@@ -100,7 +100,7 @@ export const editPatient =
   (accessToken: any, _id: any, value: Patient): AppThunk =>
   async (dispatch: AppDispatch) => {
     try {
-      const res = await api.patch(
+      await api.patch(
         `patient/${_id}`,
         { ...value },
         {
@@ -118,7 +118,7 @@ export const createPatient =
   (accessToken: any, value: Patient): AppThunk =>
   async (dispatch: AppDispatch) => {
     try {
-      const res = await api.post(
+      await api.post(
         `patient`,
         { ...value },
         {

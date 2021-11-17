@@ -66,9 +66,9 @@ const PatientForm: React.FC = () => {
   const onSubmit = (value: Patient) => {
     const accessToken = getToken()
     if (patient?._id) {
-      editPatient(accessToken, patient?._id, value)
+      dispatch(editPatient(accessToken, patient?._id, value))
     } else {
-      createPatient(accessToken, value)
+      dispatch(createPatient(accessToken, value))
     }
 
     route.push('/')
