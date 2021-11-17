@@ -48,12 +48,12 @@ const RecordForm: React.FC<{ id: any }> = ({ id }) => {
   }, [route.query.id, dispatch])
 
   useEffect(() => {
-    if (record) {
+    if (record && id) {
       setValue('symptoms', record?.symptoms)
       setValue('treatment', record?.treatment)
       setValue('medicine', record?.medicine)
     }
-  }, [record, setValue])
+  }, [record, setValue, id])
 
   const onSubmit = (value: Record) => {
     const data = { ...value, patient: id }

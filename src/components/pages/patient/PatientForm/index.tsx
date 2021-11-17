@@ -52,7 +52,8 @@ const PatientForm: React.FC = () => {
   }, [dispatch, route.query.id])
 
   useEffect(() => {
-    if (patient) {
+    const id = route.query.id
+    if (patient && id) {
       setValue('name', patient.name)
       setValue('nik', patient.nik)
       setValue('age', patient.age)
@@ -60,7 +61,7 @@ const PatientForm: React.FC = () => {
       setValue('address', patient.address)
       setValue('allergy', patient.allergy)
     }
-  }, [patient, setValue])
+  }, [patient, setValue, route.query.id])
 
   const onSubmit = (value: Patient) => {
     const accessToken = getToken()
