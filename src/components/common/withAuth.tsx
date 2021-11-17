@@ -12,9 +12,9 @@ const withAuth = (Component: NextPage) => {
       if (!accessToken) {
         localStorage.removeItem('pdmAuthToken')
         if (typeof window !== undefined) window.location.href = '/login'
+      } else {
+        setIsValid(true)
       }
-
-      setIsValid(true)
     }, [])
 
     const renderComponent = () => {
