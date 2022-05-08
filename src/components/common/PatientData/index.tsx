@@ -1,20 +1,10 @@
-import { NextRouter } from 'next/dist/client/router'
-
-import { AppDispatch } from '@/store/index'
-import { deletePatient, getPatients } from '@/store/slices/patientSlice'
-
-import { Patient } from '@/types/models'
+import { deletePatient, getPatients } from '@/store/slices/patient'
+import { PatientDataProps } from '@/types/components'
+import React from 'react'
 
 import { Button, Data, Row } from './style'
 
-type Props = {
-  patient: Patient
-  route: NextRouter
-  accessToken: string
-  dispatch: AppDispatch
-}
-
-const PatientData: React.FC<Props> = ({
+const PatientData: React.FC<PatientDataProps> = ({
   patient,
   route,
   accessToken,
@@ -32,6 +22,7 @@ const PatientData: React.FC<Props> = ({
   const patientDetail = () => {
     route.replace(`/patient/${patient._id}`)
   }
+  
   return (
     <Row key={patient._id}>
       <Data>{patient.nik}</Data>

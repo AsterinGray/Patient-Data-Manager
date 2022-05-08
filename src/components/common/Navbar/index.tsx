@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { useDispatch } from 'react-redux'
 
 import { AppDispatch } from '@/store/index'
-import { setToken } from '@/store/slices/loginSlice'
+import { setToken } from '@/store/slices/auth'
 
 import { Button, Wrapper } from './style'
 

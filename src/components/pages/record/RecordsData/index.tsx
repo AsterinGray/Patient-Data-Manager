@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import RecordData from '@/common/RecordData'
 
 import { AppDispatch, AppState } from '@/store/index'
-import { getPatientRecords } from '@/store/slices/recordSlice'
+import { getPatientRecords } from '@/store/slices/record'
 
 import { RecordResponse } from '@/types/connection'
 
@@ -48,7 +48,7 @@ const RecordsData = () => {
         <Data>Obat</Data>
         <Data>
           <Button onClick={() => route.replace(`/patient/${id}/form`)}>
-            Create
+                        Create
           </Button>
         </Data>
       </Row>

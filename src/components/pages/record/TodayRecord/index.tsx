@@ -3,7 +3,7 @@ import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
 import { AppDispatch, AppState } from '@/store/index'
-import { getAllRecord } from '@/store/slices/recordSlice'
+import { getAllRecord } from '@/store/slices/record'
 
 import { Record } from '@/types/models'
 
@@ -32,19 +32,19 @@ const TodayRecord: React.FC = () => {
         <Data></Data>
       </Row>
       {records &&
-        records.map((record: Record) => {
-          return (
-            <Row
-              key={record._id}
-              onClick={() => route.replace(`/patient/${record.patient._id}`)}
-            >
-              <div>{record.patient.name}</div>
-              <div>{record.symptoms}</div>
-              <div>{record.treatment}</div>
-              <div>{record.medicine}</div>
-            </Row>
-          )
-        })}
+                records.map((record: Record) => {
+                  return (
+                    <Row
+                      key={record._id}
+                      onClick={() => route.replace(`/patient/${record.patient._id}`)}
+                    >
+                      <div>{record.patient.name}</div>
+                      <div>{record.symptoms}</div>
+                      <div>{record.treatment}</div>
+                      <div>{record.medicine}</div>
+                    </Row>
+                  )
+                })}
     </Section>
   )
 }

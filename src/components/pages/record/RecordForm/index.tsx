@@ -1,6 +1,6 @@
 import { yupResolver } from '@hookform/resolvers/yup/dist/yup'
 import { useRouter } from 'next/dist/client/router'
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import { useForm } from 'react-hook-form'
 import { useDispatch, useSelector } from 'react-redux'
 import * as yup from 'yup'
@@ -8,11 +8,7 @@ import * as yup from 'yup'
 import Input from '@/common/Input'
 
 import { AppDispatch, AppState } from '@/store/index'
-import {
-  createRecord,
-  editRecord,
-  getRecordById,
-} from '@/store/slices/recordSlice'
+import { createRecord, editRecord, getRecordById, } from '@/store/slices/record'
 
 import { Record } from '@/types/models'
 
@@ -28,7 +24,7 @@ const schema = yup.object().shape({
 
 const RecordForm: React.FC<{ id: any }> = ({ id }) => {
   const dispatch: AppDispatch = useDispatch()
-  const { record } = useSelector((state: AppState) => state.records)
+  const { record } = useSelector((state: AppState) => state.record)
   const route = useRouter()
 
   const {

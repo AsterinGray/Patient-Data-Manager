@@ -1,8 +1,8 @@
-import { InputComponentProps } from '@/types/components'
+import { InputProps } from '@/types/components'
 
 import { Error, Field, InputWrapper, Label } from './style'
 
-const Input: React.FC<InputComponentProps> = ({
+const Input: React.FC<InputProps> = ({
   register,
   name,
   error,

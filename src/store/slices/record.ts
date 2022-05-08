@@ -1,13 +1,12 @@
-import { createSlice } from '@reduxjs/toolkit'
-import { AxiosResponse } from 'axios'
-import { HYDRATE } from 'next-redux-wrapper'
-
-import api from '@/apis/index'
-
+import api from '@/config/api'
 import { PATIENT } from '@/constants/slicesName'
 
 import { BaseState, RecordResponse } from '@/types/connection'
 import { Record } from '@/types/models'
+import { createSlice } from '@reduxjs/toolkit'
+
+import { AxiosResponse } from 'axios'
+import { HYDRATE } from 'next-redux-wrapper'
 
 import { AppDispatch, AppThunk } from '..'
 
@@ -17,7 +16,7 @@ const initialState: BaseState & RecordResponse = {
   status: 404,
 }
 
-const recordSlice = createSlice({
+const record = createSlice({
   name: PATIENT,
   initialState,
   reducers: {
@@ -35,46 +34,44 @@ const recordSlice = createSlice({
   },
 })
 
-export const getPatientRecords =
-  (accessToken: any, patientId: any): AppThunk =>
+export const getPatientRecords = (accessToken: any, patientId: any): AppThunk =>
   async (dispatch: AppDispatch) => {
     try {
       const res: AxiosResponse<RecordResponse, any> = await api.get(
-        `patient/${patientId}/record`,
+        `patient/${patientId}/record`, 
         {
           headers: {
             Authorization: `Bearer ${accessToken}`,
           },
         }
       )
-      dispatch(recordSlice.actions.setStatus(res.status))
-      dispatch(recordSlice.actions.setRecords(res.data.records))
+      dispatch(record.actions.setStatus(res.status))
+      dispatch(record.actions.setRecords(res.data.records))
     } catch {
-      dispatch(recordSlice.actions.setStatus(500))
+      dispatch(record.actions.setStatus(500))
     }
   }
 
 export const deleteRecord =
-  (accessToken: any, _id: any): AppThunk =>
-  async (dispatch: AppDispatch) => {
-    try {
-      const res: AxiosResponse<RecordResponse, any> = await api.delete(
-        `record/${_id}`,
-        {
-          headers: {
-            Authorization: `Bearer ${accessToken}`,
-          },
+    (accessToken: any, _id: any): AppThunk =>
+      async (dispatch: AppDispatch) => {
+        try {
+          const res: AxiosResponse<RecordResponse, any> = await api.delete(
+            `record/${_id}`,
+            {
+              headers: {
+                Authorization: `Bearer ${accessToken}`,
+              },
+            }
+          )
+          dispatch(record.actions.setStatus(res.status))
+          dispatch(record.actions.setRecords(res.data.records))
+        } catch {
+          dispatch(record.actions.setStatus(500))
         }
-      )
-      dispatch(recordSlice.actions.setStatus(res.status))
-      dispatch(recordSlice.actions.setRecords(res.data.records))
-    } catch {
-      dispatch(recordSlice.actions.setStatus(500))
-    }
-  }
+      }
 
-export const getAllRecord =
-  (accessToken: any, date?: string): AppThunk =>
+export const getAllRecord = (accessToken: any, date?: string): AppThunk =>
   async (dispatch: AppDispatch) => {
     try {
       const res: AxiosResponse<RecordResponse, any> = await api.get('record', {
@@ -85,15 +82,14 @@ export const getAllRecord =
           updatedAt: date,
         },
       })
-      dispatch(recordSlice.actions.setStatus(res.status))
-      dispatch(recordSlice.actions.setRecords(res.data.records))
+      dispatch(record.actions.setStatus(res.status))
+      dispatch(record.actions.setRecords(res.data.records))
     } catch {
-      dispatch(recordSlice.actions.setStatus(500))
+      dispatch(record.actions.setStatus(500))
     }
   }
 
-export const editRecord =
-  (accessToken: any, id: string, value: Record): AppThunk =>
+export const editRecord = (accessToken: any, id: string, value: Record): AppThunk =>
   async (dispatch: AppDispatch) => {
     try {
       await api.patch(
@@ -106,16 +102,15 @@ export const editRecord =
         }
       )
     } catch {
-      dispatch(recordSlice.actions.setStatus(500))
+      dispatch(record.actions.setStatus(500))
     }
   }
 
-export const createRecord =
-  (accessToken: any, value: Record): AppThunk =>
+export const createRecord = (accessToken: any, value: Record): AppThunk =>
   async (dispatch: AppDispatch) => {
     try {
       await api.post(
-        `record`,
+        'record',
         { ...value },
         {
           headers: {
@@ -124,12 +119,11 @@ export const createRecord =
         }
       )
     } catch {
-      dispatch(recordSlice.actions.setStatus(500))
+      dispatch(record.actions.setStatus(500))
     }
   }
 
-export const getRecordById =
-  (accessToken: any, id: any): AppThunk =>
+export const getRecordById = (accessToken: any, id: any): AppThunk =>
   async (dispatch: AppDispatch) => {
     try {
       await api.get(`record/${id}`, {
@@ -138,8 +132,9 @@ export const getRecordById =
         },
       })
     } catch {
-      dispatch(recordSlice.actions.setStatus(500))
+      dispatch(record.actions.setStatus(500))
     }
   }
 
-export default recordSlice.reducer
+export default record.reducer
+ 

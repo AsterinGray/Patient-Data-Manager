@@ -1,10 +1,11 @@
-import Head from 'next/head'
-
 import Navbar from '@/common/Navbar'
+import { LayoutProps } from '@/types/components'
+import Head from 'next/head'
+import React from 'react'
 
 import { Container } from './style'
 
-const Layout: React.FC<any> = ({ children, title }) => (
+const Layout: React.FC<LayoutProps> = ({ children, title }) => (
   <>
     <Head>
       <title>Patient Data Manager</title>

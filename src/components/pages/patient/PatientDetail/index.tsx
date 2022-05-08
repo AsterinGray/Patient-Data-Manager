@@ -1,17 +1,16 @@
+import { AppDispatch, AppState } from '@/store/index'
+import { getPatientById } from '@/store/slices/patient'
+
+import { getToken } from '@/utils/index'
 import { useRouter } from 'next/dist/client/router'
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-
-import { AppDispatch, AppState } from '@/store/index'
-import { getPatientById } from '@/store/slices/patientSlice'
-
-import { getToken } from '@/utils/index'
 
 import { Info, Section, Text } from './style'
 
 const PatientDetail = () => {
   const dispatch: AppDispatch = useDispatch()
-  const { patient } = useSelector((state: AppState) => state.patients)
+  const { patient } = useSelector((state: AppState) => state.patient)
   const route = useRouter()
 
   useEffect(() => {

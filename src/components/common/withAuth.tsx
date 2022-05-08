@@ -1,7 +1,6 @@
+import { getToken } from '@/utils/index'
 import { NextPage } from 'next'
 import { useEffect, useState } from 'react'
-
-import { getToken } from '@/utils/index'
 
 const withAuth = (Component: NextPage) => {
   const HOC = (props: any) => {

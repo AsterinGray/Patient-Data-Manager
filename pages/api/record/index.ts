@@ -14,40 +14,40 @@ const record = async (req: NextApiRequest, res: NextApiResponse) => {
   if (!authenticate) return res.status(401).end()
 
   switch (method) {
-    case POST:
-      try {
-        const record = new RecordModel({ ...req.body })
-        const registeredRecord = await record.save()
-        return res.status(200).json(registeredRecord)
-      } catch (err) {
-        return res.status(400).json({
-          message: 'Add Record Failed',
+  case POST:
+    try {
+      const record = new RecordModel({ ...req.body })
+      const registeredRecord = await record.save()
+      return res.status(200).json(registeredRecord)
+    } catch (err) {
+      return res.status(400).json({
+        message: 'Add Record Failed',
+      })
+    }
+
+  case GET:
+    try {
+      const updatedAt: any = req.query.updatedAt
+      let records
+
+      if (!req.query.updatedAt)
+        records = await RecordModel.find(req.query).sort({ name: 1 })
+      else
+        records = await RecordModel.find({
+          updatedAt: { $gte: updatedAt },
         })
-      }
+          .populate({ path: 'patient' })
+          .sort({ updatedAt: -1 })
 
-    case GET:
-      try {
-        const updatedAt: any = req.query.updatedAt
-        let records
+      return res.status(200).json({ records })
+    } catch (err) {
+      return res.status(400).json({
+        message: 'Update Record Failed',
+      })
+    }
 
-        if (!req.query.updatedAt)
-          records = await RecordModel.find(req.query).sort({ name: 1 })
-        else
-          records = await RecordModel.find({
-            updatedAt: { $gte: updatedAt },
-          })
-            .populate({ path: 'patient' })
-            .sort({ updatedAt: -1 })
-
-        return res.status(200).json({ records })
-      } catch (err) {
-        return res.status(400).json({
-          message: 'Update Record Failed',
-        })
-      }
-
-    default:
-      return res.status(405).end()
+  default:
+    return res.status(405).end()
   }
 }
 

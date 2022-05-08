@@ -12,16 +12,16 @@ const verifyToken = (req: NextApiRequest, res: NextApiResponse) => {
   }
 
   switch (method) {
-    case POST:
-      try {
-        const decoded = verify(token, `${process.env.JWT_SECRET}`)
-        if (decoded) return res.status(200).send('Valid Token')
-        else return res.status(401).send('Invalid Token')
-      } catch (err) {
-        return res.status(401).send('Invalid Token')
-      }
-    default:
-      return res.status(405).end()
+  case POST:
+    try {
+      const decoded = verify(token, `${process.env.JWT_SECRET}`)
+      if (decoded) return res.status(200).send('Valid Token')
+      else return res.status(401).send('Invalid Token')
+    } catch (err) {
+      return res.status(401).send('Invalid Token')
+    }
+  default:
+    return res.status(405).end()
   }
 }
 

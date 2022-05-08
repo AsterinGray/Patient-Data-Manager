@@ -1,9 +1,8 @@
-import { NextRouter } from 'next/dist/client/router'
-
 import { AppDispatch } from '@/store/index'
-import { deleteRecord, getPatientRecords } from '@/store/slices/recordSlice'
+import { deleteRecord, getPatientRecords } from '@/store/slices/record'
 
 import { Record } from '@/types/models'
+import { NextRouter } from 'next/dist/client/router'
 
 import { Button, Data, Row } from './style'
 
@@ -32,7 +31,7 @@ const RecordData = (
       <Data>
         <Button onClick={() => onEdit()}>Edit</Button>
         <Button altBg={true} onClick={() => onDelete()}>
-          Delete
+                    Delete
         </Button>
       </Data>
     </Row>

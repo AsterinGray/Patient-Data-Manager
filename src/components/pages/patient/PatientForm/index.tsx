@@ -1,22 +1,17 @@
-import { yupResolver } from '@hookform/resolvers/yup/dist/yup'
-import { useRouter } from 'next/dist/client/router'
-import { useEffect, useState } from 'react'
-import { useForm } from 'react-hook-form'
-import { useDispatch, useSelector } from 'react-redux'
-import * as yup from 'yup'
-
 import Input from '@/common/Input'
 
 import { AppDispatch, AppState } from '@/store/index'
-import {
-  createPatient,
-  editPatient,
-  getPatientById,
-} from '@/store/slices/patientSlice'
+import { createPatient, editPatient, getPatientById, } from '@/store/slices/patient'
 
 import { Patient } from '@/types/models'
 
 import { getToken } from '@/utils/index'
+import { yupResolver } from '@hookform/resolvers/yup/dist/yup'
+import { useRouter } from 'next/dist/client/router'
+import { useEffect } from 'react'
+import { useForm } from 'react-hook-form'
+import { useDispatch, useSelector } from 'react-redux'
+import * as yup from 'yup'
 
 import { Button, Form, InputWrapper, Label, Select } from './style'
 
@@ -31,7 +26,7 @@ const schema = yup.object().shape({
 
 const PatientForm: React.FC = () => {
   const dispatch: AppDispatch = useDispatch()
-  const { patient } = useSelector((state: AppState) => state.patients)
+  const { patient } = useSelector((state: AppState) => state.patient)
   const route = useRouter()
 
   const {

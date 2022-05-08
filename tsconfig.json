@@ -16,8 +16,8 @@
     "incremental": true,
     "baseUrl": ".",
     "paths": {
-      "@/apis/*": ["src/apis/*"],
       "@/common/*": ["src/components/common/*"],
+      "@/config/*": ["src/config/*"],
       "@/pages/*": ["src/components/pages/*"],
       "@/constants/*": ["src/constants/*"],
       "@/middlewares/*": ["src/middlewares/*"],

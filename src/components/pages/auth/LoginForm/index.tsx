@@ -1,14 +1,13 @@
-import { yupResolver } from '@hookform/resolvers/yup/dist/yup'
+import { AppDispatch, AppState } from '@/store/index'
+import { login } from '@/store/slices/auth'
+
+import { LoginRequest } from '@/types/connection'
+import { yupResolver } from '@hookform/resolvers/yup'
 import { useRouter } from 'next/dist/client/router'
 import { useEffect } from 'react'
 import { useForm } from 'react-hook-form'
 import { useDispatch, useSelector } from 'react-redux'
 import * as yup from 'yup'
-
-import { AppState, AppDispatch } from '@/store/index'
-import { login } from '@/store/slices/loginSlice'
-
-import { LoginRequest } from '@/types/connection'
 
 import { Button, Error, Form, Input, InputWrapper, Label } from './style'
 
@@ -19,7 +18,7 @@ const schema = yup.object().shape({
 
 const LoginForm: React.FC = () => {
   const dispatch: AppDispatch = useDispatch()
-  const state = useSelector((state: AppState) => state.login)
+  const state = useSelector((state: AppState) => state.auth)
   const router = useRouter()
   const {
     register,
