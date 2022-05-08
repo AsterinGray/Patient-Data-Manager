@@ -4,6 +4,7 @@ import { AppDispatch, AppState } from '@/store/index'
 import { createPatient, editPatient, getPatientById, } from '@/store/slices/patient'
 
 import { Patient } from '@/types/models'
+import { PatientFormSchema } from '@/utils/form-schema'
 
 import { getToken } from '@/utils/index'
 import { yupResolver } from '@hookform/resolvers/yup/dist/yup'
@@ -11,18 +12,8 @@ import { useRouter } from 'next/dist/client/router'
 import { useEffect } from 'react'
 import { useForm } from 'react-hook-form'
 import { useDispatch, useSelector } from 'react-redux'
-import * as yup from 'yup'
 
 import { Button, Form, InputWrapper, Label, Select } from './style'
-
-const schema = yup.object().shape({
-  name: yup.string().required('Nama wajib diisi'),
-  nik: yup.string(),
-  age: yup.number().required('Umur wajib diis'),
-  gender: yup.string().required('Jenis Kelaming wajib diisi'),
-  address: yup.string().required('Alamat wajib diisi'),
-  allergy: yup.string(),
-})
 
 const PatientForm: React.FC = () => {
   const dispatch: AppDispatch = useDispatch()
@@ -35,7 +26,7 @@ const PatientForm: React.FC = () => {
     setValue,
     formState: { errors, isValid },
   } = useForm({
-    resolver: yupResolver(schema),
+    resolver: yupResolver(PatientFormSchema),
     mode: 'onChange',
     reValidateMode: 'onChange',
   })

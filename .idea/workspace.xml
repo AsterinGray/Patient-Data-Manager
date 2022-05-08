@@ -2,75 +2,47 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b99f40bd-0c41-4f7c-bc44-04335cf20859" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/store/slices/auth.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/config/main.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/auth.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env.example" beforeDir="false" afterPath="$PROJECT_DIR$/.env.example" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.eslintrc.json" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintrc.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.prettierrc.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/next-env.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/next-env.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/api/auth/login.ts" beforeDir="false" afterPath="$PROJECT_DIR$/pages/api/auth/login.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/api/auth/register.ts" beforeDir="false" afterPath="$PROJECT_DIR$/pages/api/auth/register.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/api/auth/verifyToken.ts" beforeDir="false" afterPath="$PROJECT_DIR$/pages/api/auth/verifyToken.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/api/patient/[id]/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/pages/api/patient/[id]/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/api/patient/[id]/record.ts" beforeDir="false" afterPath="$PROJECT_DIR$/pages/api/patient/[id]/record.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/api/patient/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/pages/api/patient/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/api/patient/record.ts" beforeDir="false" afterPath="$PROJECT_DIR$/pages/api/patient/record.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/api/record/[id].ts" beforeDir="false" afterPath="$PROJECT_DIR$/pages/api/record/[id].ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/api/record/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/pages/api/record/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/login.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/login.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/patient/[id]/form.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/patient/[id]/form.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/patient/[id]/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/patient/[id]/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/patient/form.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/patient/form.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/patient/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/patient/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/apis/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/config/api.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/common/Input/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/Input/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/common/Input/style.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/Input/style.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/common/Layout/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/Layout/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/common/Layout/style.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/Layout/style.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/common/Navbar/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/Navbar/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/common/Navbar/style.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/Navbar/style.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/common/PatientData/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/PatientData/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/common/PatientData/style.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/PatientData/style.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/common/RecordData/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/RecordData/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/common/RecordData/style.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/RecordData/style.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/common/SearchBar/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/SearchBar/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/common/SearchBar/style.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/SearchBar/style.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/common/withAuth.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/withAuth.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/pages/auth/LoginForm/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/auth/LoginForm/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/auth/LoginForm/style.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/auth/LoginForm/style.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/patient/PatientDetail/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/patient/PatientDetail/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/patient/PatientDetail/style.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/patient/PatientDetail/style.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/pages/patient/PatientForm/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/patient/PatientForm/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/patient/PatientForm/style.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/patient/PatientForm/style.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/patient/PatientsData/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/patient/PatientsData/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/patient/PatientsData/style.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/patient/PatientsData/style.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/pages/record/RecordForm/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/record/RecordForm/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/record/RecordForm/style.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/record/RecordForm/style.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/record/RecordsData/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/record/RecordsData/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/record/RecordsData/style.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/record/RecordsData/style.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/record/TodayRecord/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/record/TodayRecord/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/record/TodayRecord/style.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/record/TodayRecord/style.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/constants/slicesName.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants/slicesName.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/slices/loginSlice.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/slices/patientSlice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/slices/patient.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/slices/recordSlice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/slices/record.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/colors.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/colors.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/spaces.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/spaces.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/types/components.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types/components.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/types/connection.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types/connection.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/types/models.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types/models.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/config/api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/config/api.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/constants/slicesName.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants/slice.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/slices/auth.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/slices/auth.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/slices/patient.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/slices/patient.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/slices/record.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/slices/record.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="TypeScript File" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="JsbtTreeLayoutManager">
+    <layout place="tools.popupnpm">
+      <scroll-view-position x="0" y="0" />
+    </layout>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -107,7 +79,7 @@
       <updated>1647673371603</updated>
       <workItem from="1647673376079" duration="108000" />
       <workItem from="1651937643208" duration="5535000" />
-      <workItem from="1652015732450" duration="834000" />
+      <workItem from="1652015732450" duration="4315000" />
     </task>
     <servers />
   </component>

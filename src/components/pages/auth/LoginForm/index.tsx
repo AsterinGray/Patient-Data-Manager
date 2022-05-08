@@ -2,19 +2,14 @@ import { AppDispatch, AppState } from '@/store/index'
 import { login } from '@/store/slices/auth'
 
 import { LoginRequest } from '@/types/connection'
+import { LoginFormSchema } from '@/utils/form-schema'
 import { yupResolver } from '@hookform/resolvers/yup'
 import { useRouter } from 'next/dist/client/router'
 import { useEffect } from 'react'
 import { useForm } from 'react-hook-form'
 import { useDispatch, useSelector } from 'react-redux'
-import * as yup from 'yup'
 
 import { Button, Error, Form, Input, InputWrapper, Label } from './style'
-
-const schema = yup.object().shape({
-  username: yup.string().required('Username wajib diisi'),
-  password: yup.string().required('Password wajib diisi'),
-})
 
 const LoginForm: React.FC = () => {
   const dispatch: AppDispatch = useDispatch()
@@ -25,7 +20,7 @@ const LoginForm: React.FC = () => {
     handleSubmit,
     formState: { errors, isValid },
   } = useForm({
-    resolver: yupResolver(schema),
+    resolver: yupResolver(LoginFormSchema),
     mode: 'onChange',
     reValidateMode: 'onChange',
   })

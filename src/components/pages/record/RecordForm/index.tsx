@@ -1,26 +1,19 @@
-import { yupResolver } from '@hookform/resolvers/yup/dist/yup'
-import { useRouter } from 'next/dist/client/router'
-import { useEffect } from 'react'
-import { useForm } from 'react-hook-form'
-import { useDispatch, useSelector } from 'react-redux'
-import * as yup from 'yup'
-
 import Input from '@/common/Input'
 
 import { AppDispatch, AppState } from '@/store/index'
 import { createRecord, editRecord, getRecordById, } from '@/store/slices/record'
 
 import { Record } from '@/types/models'
+import { RecordFormSchema } from '@/utils/form-schema'
 
 import { getToken } from '@/utils/index'
+import { yupResolver } from '@hookform/resolvers/yup/dist/yup'
+import { useRouter } from 'next/dist/client/router'
+import { useEffect } from 'react'
+import { useForm } from 'react-hook-form'
+import { useDispatch, useSelector } from 'react-redux'
 
 import { Button, Form } from './style'
-
-const schema = yup.object().shape({
-  symptoms: yup.string(),
-  treatment: yup.string(),
-  medicine: yup.string(),
-})
 
 const RecordForm: React.FC<{ id: any }> = ({ id }) => {
   const dispatch: AppDispatch = useDispatch()
@@ -33,7 +26,7 @@ const RecordForm: React.FC<{ id: any }> = ({ id }) => {
     setValue,
     formState: { errors, isValid },
   } = useForm({
-    resolver: yupResolver(schema),
+    resolver: yupResolver(RecordFormSchema),
     mode: 'onChange',
     reValidateMode: 'onChange',
   })

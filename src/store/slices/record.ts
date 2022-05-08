@@ -1,5 +1,5 @@
 import api from '@/config/api'
-import { PATIENT } from '@/constants/slicesName'
+import { RECORD } from '@/constants/slice'
 
 import { BaseState, RecordResponse } from '@/types/connection'
 import { Record } from '@/types/models'
@@ -17,7 +17,7 @@ const initialState: BaseState & RecordResponse = {
 }
 
 const record = createSlice({
-  name: PATIENT,
+  name: RECORD,
   initialState,
   reducers: {
     setRecords(state, { payload }) {
