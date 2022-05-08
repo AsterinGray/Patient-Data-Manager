@@ -1,5 +1,4 @@
-import api from '@/apis/index'
-
+import api from '@/config/api'
 import { AUTH } from '@/constants/slice'
 
 import { BaseState, LoginRequest, LoginResponse } from '@/types/connection'

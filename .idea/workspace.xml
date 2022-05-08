@@ -2,19 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b99f40bd-0c41-4f7c-bc44-04335cf20859" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/config/main.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/auth.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env.example" beforeDir="false" afterPath="$PROJECT_DIR$/.env.example" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.eslintrc.json" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintrc.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/auth/LoginForm/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/auth/LoginForm/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/patient/PatientForm/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/patient/PatientForm/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/record/RecordForm/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/record/RecordForm/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/config/api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/config/api.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/constants/slicesName.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants/slice.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/_app.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/_app.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/store/slices/auth.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/slices/auth.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/store/slices/patient.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/slices/patient.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/slices/record.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/slices/record.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,7 +72,7 @@
       <updated>1647673371603</updated>
       <workItem from="1647673376079" duration="108000" />
       <workItem from="1651937643208" duration="5535000" />
-      <workItem from="1652015732450" duration="4315000" />
+      <workItem from="1652015732450" duration="5712000" />
     </task>
     <servers />
   </component>

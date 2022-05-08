@@ -1,8 +1,7 @@
-import type { AppProps } from 'next/app'
-
 import { wrapper } from '@/store/index'
 
 import { GlobalStyleComponent } from '@/styles/index'
+import type { AppProps } from 'next/app'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (

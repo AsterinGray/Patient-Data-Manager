@@ -1,5 +1,4 @@
-import api from '@/apis/index'
-
+import api from '@/config/api'
 import { PATIENT } from '@/constants/slice'
 
 import { BaseState, PatientResponse } from '@/types/connection'
@@ -129,5 +128,5 @@ export const createPatient =
           dispatch(patient.actions.setStatus(500))
         }
       }
-      
+
 export default patient.reducer
