@@ -13,7 +13,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   const dispatch: AppDispatch = useDispatch();
 
   useEffect(() => {
-    // dispatch(setIsAuthenticate(initAuthentication()));
+    dispatch(setIsAuthenticate(initAuthentication()));
   }, [dispatch]);
 
   return (
