@@ -6,9 +6,8 @@ import { getPatients } from '@/store/slices/patient'
 
 import { PatientResponse } from '@/types/connection'
 
-import { getToken } from '@/utils/index'
 import { useRouter } from 'next/dist/client/router'
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
 import { Button, Data, Row, Table, Text, Title } from './style'
@@ -18,15 +17,10 @@ const PatientsData: React.FC<{ searchTerm?: string }> = ({ searchTerm }) => {
   const { patients }: PatientResponse = useSelector(
     (state: AppState) => state.patient
   )
-  const [accessToken, setAccessToken] = useState('')
   const route = useRouter()
 
   useEffect(() => {
-    const accessToken = getToken()
-    if (accessToken) {
-      setAccessToken(accessToken)
-      dispatch(getPatients(accessToken))
-    }
+    dispatch(getPatients())
   }, [dispatch])
 
   const onCreate = () => {
@@ -42,7 +36,6 @@ const PatientsData: React.FC<{ searchTerm?: string }> = ({ searchTerm }) => {
               key={patient._id}
               patient={patient}
               route={route}
-              accessToken={accessToken}
               dispatch={dispatch}
             />
           )
@@ -56,7 +49,6 @@ const PatientsData: React.FC<{ searchTerm?: string }> = ({ searchTerm }) => {
                 key={patient._id}
                 patient={patient}
                 route={route}
-                accessToken={accessToken}
                 dispatch={dispatch}
               />
             )

@@ -9,13 +9,12 @@ import { Button, Data, Row } from './style'
 const RecordData = (
   record: Record,
   route: NextRouter,
-  accessToken: string,
   dispatch: AppDispatch,
   patientId: any
 ) => {
   const onDelete = () => {
-    dispatch(deleteRecord(accessToken, record._id))
-    dispatch(getPatientRecords(accessToken, patientId))
+    dispatch(deleteRecord(record._id))
+    dispatch(getPatientRecords(patientId))
   }
 
   const onEdit = () => {

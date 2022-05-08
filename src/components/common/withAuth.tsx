@@ -1,23 +1,20 @@
-import { getToken } from '@/utils/index'
+import { AppState } from '@/store/index'
 import { NextPage } from 'next'
-import { useEffect, useState } from 'react'
+import { useRouter } from 'next/dist/client/router'
+import { useEffect } from 'react'
+import { useSelector } from 'react-redux'
 
 const withAuth = (Component: NextPage) => {
   const HOC = (props: any) => {
-    const [isValid, setIsValid] = useState(false)
+    const { isAuthenticate } = useSelector((state: AppState) => state.auth)
+    const router = useRouter()
 
     useEffect(() => {
-      const accessToken = getToken()
-      if (!accessToken) {
-        localStorage.removeItem('pdmAuthToken')
-        if (typeof window !== undefined) window.location.href = '/login'
-      } else {
-        setIsValid(true)
-      }
+      if(!isAuthenticate) router.push('/login')
     }, [])
 
     const renderComponent = () => {
-      if (isValid) {
+      if (isAuthenticate) {
         return <Component {...props} />
       } else {
         return null

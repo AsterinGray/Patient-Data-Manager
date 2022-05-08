@@ -11,7 +11,7 @@ import { HYDRATE } from 'next-redux-wrapper'
 import { AppDispatch, AppThunk } from '..'
 
 const initialState: BaseState & { isAuthenticate: boolean, message: string } = {
-  isAuthenticate: false,
+  isAuthenticate: true,
   message: '',
   status: 404,
 }
@@ -59,6 +59,6 @@ export const login =
         }
       }
 
-export const { setIsAuthenticate } = auth.actions
+export const { setIsAuthenticate, logout } = auth.actions
 
 export default auth.reducer

@@ -1,12 +1,15 @@
 import Input from '@/common/Input'
 
 import { AppDispatch, AppState } from '@/store/index'
-import { createPatient, editPatient, getPatientById, } from '@/store/slices/patient'
+import {
+  createPatient,
+  editPatient,
+  getPatientById,
+} from '@/store/slices/patient'
 
 import { Patient } from '@/types/models'
 import { PatientFormSchema } from '@/utils/form-schema'
 
-import { getToken } from '@/utils/index'
 import { yupResolver } from '@hookform/resolvers/yup/dist/yup'
 import { useRouter } from 'next/dist/client/router'
 import { useEffect } from 'react'
@@ -32,9 +35,8 @@ const PatientForm: React.FC = () => {
   })
 
   useEffect(() => {
-    const accessToken = getToken()
     const id = route.query.id
-    if (id && accessToken) dispatch(getPatientById(accessToken, id))
+    if (id) dispatch(getPatientById(id))
   }, [dispatch, route.query.id])
 
   useEffect(() => {
@@ -50,11 +52,10 @@ const PatientForm: React.FC = () => {
   }, [patient, setValue, route.query.id])
 
   const onSubmit = (value: Patient) => {
-    const accessToken = getToken()
     if (patient?._id) {
-      dispatch(editPatient(accessToken, patient?._id, value))
+      dispatch(editPatient( patient?._id, value))
     } else {
-      dispatch(createPatient(accessToken, value))
+      dispatch(createPatient(value))
     }
 
     route.push('/')

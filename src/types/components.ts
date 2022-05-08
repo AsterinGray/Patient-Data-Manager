@@ -13,12 +13,11 @@ export type InputProps = {
 
 export type LayoutProps = {
   children: ReactNode
-  title: string
+  title?: string
 }
 
 export type PatientDataProps = {
   patient: Patient
   route: NextRouter
-  accessToken: string
   dispatch: AppDispatch
 }

@@ -94,14 +94,13 @@ export const editPatient = (id: any, value: Patient): AppThunk =>
     }
   }
 
-export const createPatient =
-    (accessToken: any, value: Patient): AppThunk =>
-      async (dispatch: AppDispatch) => {
-        try {
-          await api.post(CREATE_PATIENT, { ...value })
-        } catch { 
-          dispatch(patient.actions.setStatus(500))
-        }
-      }
+export const createPatient = (value: Patient): AppThunk =>
+  async (dispatch: AppDispatch) => {
+    try {
+      await api.post(CREATE_PATIENT, { ...value })
+    } catch { 
+      dispatch(patient.actions.setStatus(500))
+    }
+  }
 
 export default patient.reducer

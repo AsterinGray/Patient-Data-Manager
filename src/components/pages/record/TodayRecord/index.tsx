@@ -1,24 +1,22 @@
-import { useRouter } from 'next/router'
-import { useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-
 import { AppDispatch, AppState } from '@/store/index'
 import { getAllRecord } from '@/store/slices/record'
 
 import { Record } from '@/types/models'
 
-import { getCurrentDate, getToken } from '@/utils/index'
+import { getCurrentDate } from '@/utils/index'
+import { useRouter } from 'next/router'
+import { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 
 import { Data, Row, Section, Title } from './style'
 
 const TodayRecord: React.FC = () => {
   const dispatch: AppDispatch = useDispatch()
-  const { records } = useSelector((state: AppState) => state.records)
+  const { records } = useSelector((state: AppState) => state.record)
   const route = useRouter()
 
   useEffect(() => {
-    const token = getToken()
-    if (token) dispatch(getAllRecord(token, getCurrentDate()))
+    dispatch(getAllRecord(getCurrentDate()))
   }, [dispatch])
 
   return (
@@ -31,20 +29,19 @@ const TodayRecord: React.FC = () => {
         <Title>Obat</Title>
         <Data></Data>
       </Row>
-      {records &&
-                records.map((record: Record) => {
-                  return (
-                    <Row
-                      key={record._id}
-                      onClick={() => route.replace(`/patient/${record.patient._id}`)}
-                    >
-                      <div>{record.patient.name}</div>
-                      <div>{record.symptoms}</div>
-                      <div>{record.treatment}</div>
-                      <div>{record.medicine}</div>
-                    </Row>
-                  )
-                })}
+      {records && records.map((record: Record) => {
+        return (
+          <Row
+            key={record._id}
+            onClick={() => route.replace(`/patient/${record.patient._id}`)}
+          >
+            <div>{record.patient.name}</div>
+            <div>{record.symptoms}</div>
+            <div>{record.treatment}</div>
+            <div>{record.medicine}</div>
+          </Row>
+        )
+      })}
     </Section>
   )
 }

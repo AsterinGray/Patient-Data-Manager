@@ -4,8 +4,6 @@ import { login } from '@/store/slices/auth'
 import { LoginRequest } from '@/types/connection'
 import { LoginFormSchema } from '@/utils/form-schema'
 import { yupResolver } from '@hookform/resolvers/yup'
-import { useRouter } from 'next/dist/client/router'
-import { useEffect } from 'react'
 import { useForm } from 'react-hook-form'
 import { useDispatch, useSelector } from 'react-redux'
 
@@ -14,7 +12,6 @@ import { Button, Error, Form, Input, InputWrapper, Label } from './style'
 const LoginForm: React.FC = () => {
   const dispatch: AppDispatch = useDispatch()
   const state = useSelector((state: AppState) => state.auth)
-  const router = useRouter()
   const {
     register,
     handleSubmit,
@@ -28,12 +25,6 @@ const LoginForm: React.FC = () => {
   const onSubmit = (value: LoginRequest) => {
     dispatch(login(value))
   }
-
-  useEffect(() => {
-    if (state.token) localStorage.setItem('pdmAuthToken', state.token)
-    const token = localStorage.getItem('pdmAuthToken')
-    if (token) router.replace('/')
-  }, [state, router])
 
   return (
     <Form onSubmit={handleSubmit(onSubmit)}>

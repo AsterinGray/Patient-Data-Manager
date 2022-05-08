@@ -6,7 +6,6 @@ import { createRecord, editRecord, getRecordById, } from '@/store/slices/record'
 import { Record } from '@/types/models'
 import { RecordFormSchema } from '@/utils/form-schema'
 
-import { getToken } from '@/utils/index'
 import { yupResolver } from '@hookform/resolvers/yup/dist/yup'
 import { useRouter } from 'next/dist/client/router'
 import { useEffect } from 'react'
@@ -32,8 +31,7 @@ const RecordForm: React.FC<{ id: any }> = ({ id }) => {
   })
 
   useEffect(() => {
-    const accessToken = getToken()
-    if (route.query.id) dispatch(getRecordById(accessToken, route.query.id))
+    if (route.query.id) dispatch(getRecordById(route.query.id))
   }, [route.query.id, dispatch])
 
   useEffect(() => {
@@ -46,12 +44,11 @@ const RecordForm: React.FC<{ id: any }> = ({ id }) => {
 
   const onSubmit = (value: Record) => {
     const data = { ...value, patient: id }
-    const accessToken = getToken()
 
     if (record?._id) {
-      dispatch(editRecord(accessToken, record._id, data))
+      dispatch(editRecord(record._id, data))
     } else {
-      dispatch(createRecord(accessToken, data))
+      dispatch(createRecord(data))
     }
   }
 

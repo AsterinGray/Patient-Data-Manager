@@ -1,7 +1,6 @@
 import { AppDispatch, AppState } from '@/store/index'
 import { getPatientById } from '@/store/slices/patient'
 
-import { getToken } from '@/utils/index'
 import { useRouter } from 'next/dist/client/router'
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
@@ -15,8 +14,7 @@ const PatientDetail = () => {
 
   useEffect(() => {
     if (route.query.id) {
-      const accessToken = getToken()
-      if (accessToken) dispatch(getPatientById(accessToken, route.query.id))
+      dispatch(getPatientById(route.query.id))
     }
   }, [dispatch, route.query.id])
 

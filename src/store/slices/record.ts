@@ -93,7 +93,7 @@ export const editRecord = (id: string, value: Record): AppThunk =>
     }
   }
 
-export const createRecord = (accessToken: any, value: Record): AppThunk =>
+export const createRecord = (value: Record): AppThunk =>
   async (dispatch: AppDispatch) => {
     try {
       await api.post(

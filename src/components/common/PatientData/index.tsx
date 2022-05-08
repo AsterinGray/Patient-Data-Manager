@@ -7,12 +7,11 @@ import { Button, Data, Row } from './style'
 const PatientData: React.FC<PatientDataProps> = ({
   patient,
   route,
-  accessToken,
   dispatch,
 }) => {
   const onDelete = () => {
-    dispatch(deletePatient(accessToken, patient._id))
-    dispatch(getPatients(accessToken))
+    dispatch(deletePatient( patient._id))
+    dispatch(getPatients())
   }
 
   const onEdit = () => {

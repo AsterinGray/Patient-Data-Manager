@@ -1,9 +1,8 @@
+import { AppDispatch } from '@/store/index'
+import { logout } from '@/store/slices/auth'
 import { useRouter } from 'next/dist/client/router'
 import Link from 'next/link'
 import { useDispatch } from 'react-redux'
-
-import { AppDispatch } from '@/store/index'
-import { setToken } from '@/store/slices/auth'
 
 import { Button, Wrapper } from './style'
 
@@ -11,9 +10,8 @@ const Navbar = () => {
   const dispatch: AppDispatch = useDispatch()
   const router = useRouter()
 
-  const logout = () => {
-    localStorage.removeItem('pdmAuthToken')
-    dispatch(setToken(''))
+  const onLogoutClick = () => {
+    dispatch(logout())
     router.replace('/login')
   }
 
@@ -22,7 +20,7 @@ const Navbar = () => {
       <Link href="/">Home</Link>
       <Link href="/patient">Patient</Link>
 
-      <Button onClick={() => logout()}>Logout</Button>
+      <Button onClick={() => onLogoutClick()}>Logout</Button>
     </Wrapper>
   )
 }
