@@ -1,4 +1,12 @@
 import api from '@/config/api'
+import {
+  CREATE_RECORD,
+  DELETE_RECORD,
+  EDIT_RECORD,
+  GET_PATIENT_RECORD,
+  GET_RECORD,
+  GET_RECORD_BY_ID,
+} from '@/constants/api-route'
 import { RECORD } from '@/constants/slice'
 
 import { BaseState, RecordResponse } from '@/types/connection'
@@ -34,15 +42,13 @@ const record = createSlice({
   },
 })
 
-export const getPatientRecords = (accessToken: any, patientId: any): AppThunk =>
+export const getAllRecord = (updatedAt?: string): AppThunk =>
   async (dispatch: AppDispatch) => {
     try {
       const res: AxiosResponse<RecordResponse, any> = await api.get(
-        `patient/${patientId}/record`, 
+        GET_RECORD,
         {
-          headers: {
-            Authorization: `Bearer ${accessToken}`,
-          },
+          params: { updatedAt },
         }
       )
       dispatch(record.actions.setStatus(res.status))
@@ -52,36 +58,12 @@ export const getPatientRecords = (accessToken: any, patientId: any): AppThunk =>
     }
   }
 
-export const deleteRecord =
-    (accessToken: any, _id: any): AppThunk =>
-      async (dispatch: AppDispatch) => {
-        try {
-          const res: AxiosResponse<RecordResponse, any> = await api.delete(
-            `record/${_id}`,
-            {
-              headers: {
-                Authorization: `Bearer ${accessToken}`,
-              },
-            }
-          )
-          dispatch(record.actions.setStatus(res.status))
-          dispatch(record.actions.setRecords(res.data.records))
-        } catch {
-          dispatch(record.actions.setStatus(500))
-        }
-      }
-
-export const getAllRecord = (accessToken: any, date?: string): AppThunk =>
+export const getPatientRecords = (id: any): AppThunk =>
   async (dispatch: AppDispatch) => {
     try {
-      const res: AxiosResponse<RecordResponse, any> = await api.get('record', {
-        headers: {
-          Authorization: `Bearer ${accessToken}`,
-        },
-        params: {
-          updatedAt: date,
-        },
-      })
+      const res: AxiosResponse<RecordResponse, any> = await api.get(
+        GET_PATIENT_RECORD(id)
+      )
       dispatch(record.actions.setStatus(res.status))
       dispatch(record.actions.setRecords(res.data.records))
     } catch {
@@ -89,18 +71,23 @@ export const getAllRecord = (accessToken: any, date?: string): AppThunk =>
     }
   }
 
-export const editRecord = (accessToken: any, id: string, value: Record): AppThunk =>
+export const deleteRecord = (id: any): AppThunk =>
+  async (dispatch: AppDispatch) => {
+    try { 
+      const res: AxiosResponse<RecordResponse, any> = await api.delete(
+        DELETE_RECORD(id)
+      )
+      dispatch(record.actions.setStatus(res.status))
+      dispatch(record.actions.setRecords(res.data.records))
+    } catch {
+      dispatch(record.actions.setStatus(500))
+    }
+  }
+
+export const editRecord = (id: string, value: Record): AppThunk =>
   async (dispatch: AppDispatch) => {
     try {
-      await api.patch(
-        `record/${id}`,
-        { ...value },
-        {
-          headers: {
-            Authorization: `Bearer ${accessToken}`,
-          },
-        }
-      )
+      await api.patch(EDIT_RECORD(id), { ...value })
     } catch {
       dispatch(record.actions.setStatus(500))
     }
@@ -110,31 +97,21 @@ export const createRecord = (accessToken: any, value: Record): AppThunk =>
   async (dispatch: AppDispatch) => {
     try {
       await api.post(
-        'record',
+        CREATE_RECORD,
         { ...value },
-        {
-          headers: {
-            Authorization: `Bearer ${accessToken}`,
-          },
-        }
       )
     } catch {
       dispatch(record.actions.setStatus(500))
     }
   }
 
-export const getRecordById = (accessToken: any, id: any): AppThunk =>
+export const getRecordById = (id: any): AppThunk =>
   async (dispatch: AppDispatch) => {
     try {
-      await api.get(`record/${id}`, {
-        headers: {
-          Authorization: `Bearer ${accessToken}`,
-        },
-      })
+      await api.get(GET_RECORD_BY_ID(id))
     } catch {
       dispatch(record.actions.setStatus(500))
     }
   }
 
 export default record.reducer
- 

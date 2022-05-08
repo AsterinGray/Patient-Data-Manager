@@ -5,7 +5,7 @@ export const initAuthentication = () => {
   const token = _getCookie(TOKEN_NAME)
   if (token) _setHeader(`Bearer ${token}`)
 
-  return { isAuthenticate: Boolean(token) }
+  return Boolean(token)
 }
 
 export const setAuthentication = (token?: string) => {

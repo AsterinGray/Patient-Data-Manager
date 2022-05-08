@@ -1,4 +1,11 @@
 import api from '@/config/api'
+import {
+  CREATE_PATIENT,
+  DELETE_PATIENT,
+  EDIT_PATIENT,
+  GET_PATIENT,
+  GET_PATIENT_BY_ID
+} from '@/constants/api-route'
 import { PATIENT } from '@/constants/slice'
 
 import { BaseState, PatientResponse } from '@/types/connection'
@@ -37,18 +44,12 @@ const patient = createSlice({
 })
 
 export const getPatients =
-    (accessToken: any, date?: string): AppThunk =>
+    (updatedAt?: string): AppThunk =>
       async (dispatch: AppDispatch) => {
         try {
           const res: AxiosResponse<PatientResponse, any> = await api.get(
-            'patient',
-            {
-              headers: {
-                Authorization: `Bearer ${accessToken}`,
-              },
-              params: {
-                updatedAt: date,
-              },
+            GET_PATIENT,
+            { params: { updatedAt },
             }
           )
           dispatch(patient.actions.setStatus(res.status))
@@ -58,73 +59,47 @@ export const getPatients =
         }
       }
 
-export const getPatientById =
-    (accessToken: any, _id: any): AppThunk =>
-      async (dispatch: AppDispatch) => {
-        try {
-          const res: AxiosResponse<any, any> = await api.get(`patient/${_id}`, {
-            headers: {
-              Authorization: `Bearer ${accessToken}`,
-            },
-          })
-          dispatch(patient.actions.setStatus(res.status))
-          dispatch(patient.actions.setPatient(res.data.patient))
-        } catch {
-          dispatch(patient.actions.setStatus(500))
-        }
-      }
+export const getPatientById = (id: any): AppThunk =>
+  async (dispatch: AppDispatch) => {
+    try {
+      const res: AxiosResponse<any, any> = await api.get(GET_PATIENT_BY_ID(id))
+      dispatch(patient.actions.setStatus(res.status))
+      dispatch(patient.actions.setPatient(res.data.patient))
+    } catch {
+      dispatch(patient.actions.setStatus(500))
+    }
+  }
 
-export const deletePatient =
-    (accessToken: any, _id: any): AppThunk =>
-      async (dispatch: AppDispatch) => {
-        try {
-          const res: AxiosResponse<PatientResponse, any> = await api.delete(
-            `patient/${_id}`,
-            {
-              headers: {
-                Authorization: `Bearer ${accessToken}`,
-              },
-            }
-          )
-          dispatch(patient.actions.setStatus(res.status))
-          dispatch(patient.actions.setPatients(res.data.patients))
-        } catch {
-          dispatch(patient.actions.setStatus(500))
-        }
-      }
+export const deletePatient = (id: any): AppThunk =>
+  async (dispatch: AppDispatch) => {
+    try {
+      const res: AxiosResponse<PatientResponse, any> =
+        await api.delete(DELETE_PATIENT(id))
+      dispatch(patient.actions.setStatus(res.status))
+      dispatch(patient.actions.setPatients(res.data.patients))
+    } catch {
+      dispatch(patient.actions.setStatus(500))
+    }
+  }
 
-export const editPatient =
-    (accessToken: any, _id: any, value: Patient): AppThunk =>
-      async (dispatch: AppDispatch) => {
-        try {
-          await api.patch(
-            `patient/${_id}`,
-            { ...value },
-            {
-              headers: {
-                Authorization: `Bearer ${accessToken}`,
-              },
-            }
-          )
-        } catch {
-          dispatch(patient.actions.setStatus(500))
-        }
-      }
+export const editPatient = (id: any, value: Patient): AppThunk =>
+  async (dispatch: AppDispatch) => {
+    try {
+      await api.patch(
+        EDIT_PATIENT(id),
+        { ...value }
+      )
+    } catch {
+      dispatch(patient.actions.setStatus(500))
+    }
+  }
 
 export const createPatient =
     (accessToken: any, value: Patient): AppThunk =>
       async (dispatch: AppDispatch) => {
         try {
-          await api.post(
-            'patient',
-            { ...value },
-            {
-              headers: {
-                Authorization: `Bearer ${accessToken}`,
-              },
-            }
-          )
-        } catch {
+          await api.post(CREATE_PATIENT, { ...value })
+        } catch { 
           dispatch(patient.actions.setStatus(500))
         }
       }
