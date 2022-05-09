@@ -1,11 +1,10 @@
-import { NextApiRequest, NextApiResponse } from 'next'
-
 import { DELETE, GET, PATCH } from '@/constants/method'
 
 import connectDB from '@/middlewares/database'
 import { validateAuth } from '@/middlewares/validateAuth'
 
 import RecordModel from '@/models/record'
+import { NextApiRequest, NextApiResponse } from 'next'
 
 const record = async (req: NextApiRequest, res: NextApiResponse) => {
   const { method } = req
@@ -16,8 +15,8 @@ const record = async (req: NextApiRequest, res: NextApiResponse) => {
   switch (method) {
   case GET:
     try {
-      const patient = await RecordModel.findById(req.query.id)
-      return res.status(200).json({ patient })
+      const record = await RecordModel.findById(req.query.id)
+      return res.status(200).json({ record })
     } catch (err) {
       return res.status(404).json({
         message: 'Record Not Found',
@@ -36,8 +35,12 @@ const record = async (req: NextApiRequest, res: NextApiResponse) => {
 
   case DELETE:
     try {
-      await RecordModel.findByIdAndDelete(req.query.id)
-      return res.status(200).json({ message: 'Record Deleted' })
+      const record = await RecordModel.findByIdAndDelete(req.query.id)
+      const patient = record.patient
+      const records = await RecordModel.find({ patient }).sort({
+        createdAt: -1,
+      })
+      return res.status(200).json({ message: 'Record Deleted', records })
     } catch (err) {
       return res.status(404).json({
         message: 'Record Not Found',

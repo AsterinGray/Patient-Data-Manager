@@ -21,8 +21,8 @@ const RecordsData = () => {
   useEffect(() => {
     const id = route.query.id
     if (id) {
-      setId(id)
       dispatch(getPatientRecords(id))
+      setId(id)
     }
   }, [dispatch, route.query.id])
 
@@ -41,11 +41,11 @@ const RecordsData = () => {
         <Data>Obat</Data>
         <Data>
           <Button onClick={() => route.replace(`/patient/${id}/form`)}>
-                        Create
+            Create
           </Button>
         </Data>
       </Row>
-      {records && records.length !== 0 && renderData()}
+      {records && records.length !== 0 ? renderData() : 'No Data'}
     </Section>
   )
 }

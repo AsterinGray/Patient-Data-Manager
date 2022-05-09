@@ -1,5 +1,5 @@
 import { AppDispatch } from '@/store/index'
-import { deleteRecord, getPatientRecords } from '@/store/slices/record'
+import { deleteRecord } from '@/store/slices/record'
 
 import { Record } from '@/types/models'
 import { NextRouter } from 'next/dist/client/router'
@@ -14,11 +14,10 @@ const RecordData = (
 ) => {
   const onDelete = () => {
     dispatch(deleteRecord(record._id))
-    dispatch(getPatientRecords(patientId))
   }
 
   const onEdit = () => {
-    route.replace(`/patient/${patientId}/form?id=${record._id}`)
+    route.replace(`/patient/${patientId}/form?record=${record._id}`)
   }
 
   return (
@@ -30,7 +29,7 @@ const RecordData = (
       <Data>
         <Button onClick={() => onEdit()}>Edit</Button>
         <Button altBg={true} onClick={() => onDelete()}>
-                    Delete
+          Delete
         </Button>
       </Data>
     </Row>

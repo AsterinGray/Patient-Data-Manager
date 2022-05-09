@@ -10,7 +10,7 @@ import {
 import { Patient } from '@/types/models'
 import { PatientFormSchema } from '@/utils/form-schema'
 
-import { yupResolver } from '@hookform/resolvers/yup/dist/yup'
+import { yupResolver } from '@hookform/resolvers/yup'
 import { useRouter } from 'next/dist/client/router'
 import { useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'

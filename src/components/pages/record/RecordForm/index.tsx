@@ -6,18 +6,25 @@ import { createRecord, editRecord, getRecordById, } from '@/store/slices/record'
 import { Record } from '@/types/models'
 import { RecordFormSchema } from '@/utils/form-schema'
 
-import { yupResolver } from '@hookform/resolvers/yup/dist/yup'
+import { yupResolver } from '@hookform/resolvers/yup'
 import { useRouter } from 'next/dist/client/router'
-import { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { useDispatch, useSelector } from 'react-redux'
+import { toast } from 'react-toastify'
 
 import { Button, Form } from './style'
 
-const RecordForm: React.FC<{ id: any }> = ({ id }) => {
+type RecordFormProps = {
+  id: any,
+  patientId: any
+}
+
+const RecordForm: React.FC<RecordFormProps> = ({ id, patientId }) => {
   const dispatch: AppDispatch = useDispatch()
   const { record } = useSelector((state: AppState) => state.record)
-  const route = useRouter()
+  const [isLoading, setIsLoading] = useState(false)
+  const router = useRouter()
 
   const {
     register,
@@ -31,8 +38,8 @@ const RecordForm: React.FC<{ id: any }> = ({ id }) => {
   })
 
   useEffect(() => {
-    if (route.query.id) dispatch(getRecordById(route.query.id))
-  }, [route.query.id, dispatch])
+    if (id) dispatch(getRecordById(id))
+  }, [id, dispatch])
 
   useEffect(() => {
     if (record && id) {
@@ -43,13 +50,33 @@ const RecordForm: React.FC<{ id: any }> = ({ id }) => {
   }, [record, setValue, id])
 
   const onSubmit = (value: Record) => {
-    const data = { ...value, patient: id }
-
-    if (record?._id) {
-      dispatch(editRecord(record._id, data))
+    const data = { ...value, patient: patientId }
+    setIsLoading(true)
+    if (id) {
+      dispatch(editRecord({
+        id: record._id,
+        value: data,
+        successHandler,
+        errorHandler
+      }))
     } else {
-      dispatch(createRecord(data))
+      dispatch(createRecord({
+        value: data,
+        successHandler,
+        errorHandler
+      }))
     }
+  }
+
+  const successHandler = (message) => {
+    setIsLoading(false)
+    router.push(`/patient/${patientId}`)
+    toast.success(message)
+  }
+
+  const errorHandler = (message) => {
+    setIsLoading(false)
+    toast.error(message)
   }
 
   return (
@@ -63,7 +90,7 @@ const RecordForm: React.FC<{ id: any }> = ({ id }) => {
       <Input
         register={register}
         name="treatment"
-        label="Pengobata"
+        label="Pengobatan"
         error={errors.treatment?.message}
       />
       <Input
@@ -72,8 +99,8 @@ const RecordForm: React.FC<{ id: any }> = ({ id }) => {
         label="Obat"
         error={errors.medicine?.message}
       />
-      <Button type="submit" disabled={!isValid}>
-        {record && record._id ? 'Edit' : 'Submit'}
+      <Button type="submit" disabled={!isValid || isLoading}>
+        {!isLoading ? id ? 'Edit' : 'Submit' : 'Loading...'}
       </Button>
     </Form>
   )

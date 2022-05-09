@@ -60,7 +60,10 @@ const TodayRecord: React.FC = () => {
         <Title>Obat</Title>
         <Data></Data>
       </Row>
-      {isLoading ? <div>Loading...</div> : records.length ? renderRecords() : <div>No Record</div>}
+      {isLoading ?
+        <div>Loading...</div> :
+        records.length ? renderRecords() : <div>No Record</div>
+      }
     </Section>
   )
 }

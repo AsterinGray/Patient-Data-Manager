@@ -5,16 +5,22 @@ import { useRouter } from 'next/dist/client/router'
 import { useEffect, useState } from 'react'
 
 const RecordFormPage = () => {
-  const route = useRouter()
+  const router = useRouter()
   const [id, setId] = useState<string | string[]>('')
+  const [patientId, setPatientId] = useState<string | string[]>('')
 
   useEffect(() => {
-    if (route.query.id) setId(route.query.id)
-  }, [route.query.id])
+    if (router.query.record) {
+      setId(router.query.record)
+    }
+    if(router.query.id) {
+      setPatientId(router.query.id)
+    }
+  }, [router.query.record])
 
   return (
     <Layout>
-      <RecordForm id={id} />
+      <RecordForm {...{ id, patientId }} />
     </Layout>
   )
 }

@@ -31,6 +31,9 @@ const record = createSlice({
     setRecords(state, { payload }) {
       state.records = payload
     },
+    setRecord(state, { payload }) {
+      state.record = payload
+    },
     setStatus(state, { payload }) {
       state.status = payload
     },
@@ -88,23 +91,36 @@ export const deleteRecord = (id: any): AppThunk =>
     }
   }
 
-export const editRecord = (id: string, value: Record): AppThunk =>
+export const editRecord = ({
+  id,
+  value,
+  successHandler,
+  errorHandler
+}): AppThunk =>
   async (dispatch: AppDispatch) => {
     try {
-      await api.patch(EDIT_RECORD(id), { ...value })
-    } catch {
+      const res = await api.patch(EDIT_RECORD(id), { ...value })
+      successHandler(res.data.message)
+    } catch (e) {
+      errorHandler(e.response.data.message || e.message)
       dispatch(record.actions.setStatus(500))
     }
   }
 
-export const createRecord = (value: Record): AppThunk =>
+export const createRecord = ({
+  value,
+  successHandler,
+  errorHandler
+}): AppThunk =>
   async (dispatch: AppDispatch) => {
     try {
-      await api.post(
+      const res = await api.post(
         CREATE_RECORD,
         { ...value },
       )
-    } catch {
+      successHandler(res.data.message)
+    } catch (e) {
+      errorHandler(e.response.data.message || e.message)
       dispatch(record.actions.setStatus(500))
     }
   }
@@ -112,7 +128,9 @@ export const createRecord = (value: Record): AppThunk =>
 export const getRecordById = (id: any): AppThunk =>
   async (dispatch: AppDispatch) => {
     try {
-      await api.get(GET_RECORD_BY_ID(id))
+      const res = await api.get(GET_RECORD_BY_ID(id))
+      dispatch(record.actions.setRecord(res.data.record))
+      dispatch(record.actions.setStatus(res.status))
     } catch {
       dispatch(record.actions.setStatus(500))
     }
