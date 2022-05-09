@@ -8,6 +8,7 @@ import type { AppProps } from 'next/app'
 import { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
 function MyApp({ Component, pageProps }: AppProps) {
   const dispatch: AppDispatch = useDispatch();

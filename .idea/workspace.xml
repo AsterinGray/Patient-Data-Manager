@@ -3,9 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="b99f40bd-0c41-4f7c-bc44-04335cf20859" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/api/patient/[id]/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/pages/api/patient/[id]/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/_app.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/_app.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/common/withAuth.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/withAuth.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/auth/LoginForm/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/auth/LoginForm/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/auth/LoginForm/style.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/auth/LoginForm/style.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/config/api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/config/api.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/store/slices/auth.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/slices/auth.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -76,7 +78,7 @@
       <workItem from="1647673376079" duration="108000" />
       <workItem from="1651937643208" duration="5535000" />
       <workItem from="1652015732450" duration="11045000" />
-      <workItem from="1652062177850" duration="8221000" />
+      <workItem from="1652062177850" duration="13391000" />
     </task>
     <servers />
   </component>

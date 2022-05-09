@@ -4,14 +4,19 @@ import { login } from '@/store/slices/auth'
 import { LoginRequest } from '@/types/connection'
 import { LoginFormSchema } from '@/utils/form-schema'
 import { yupResolver } from '@hookform/resolvers/yup'
+import { useRouter } from 'next/dist/client/router'
+import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { useDispatch, useSelector } from 'react-redux'
+import { toast } from 'react-toastify'
 
 import { Button, Error, Form, Input, InputWrapper, Label } from './style'
 
 const LoginForm: React.FC = () => {
   const dispatch: AppDispatch = useDispatch()
   const state = useSelector((state: AppState) => state.auth)
+  const [isLoading, setIsLoading] = useState(false)
+  const router = useRouter()
   const {
     register,
     handleSubmit,
@@ -23,7 +28,19 @@ const LoginForm: React.FC = () => {
   })
 
   const onSubmit = (value: LoginRequest) => {
-    dispatch(login(value))
+    setIsLoading(true)
+    dispatch(login({ value, successHandler, errorHandler }))
+  }
+
+  const successHandler = (message: string) => {
+    setIsLoading(false)
+    toast.success(message)
+    router.push('/')
+  }
+
+  const errorHandler = (message: string) => {
+    toast.error(message)
+    setIsLoading(false)
   }
 
   return (
@@ -37,10 +54,9 @@ const LoginForm: React.FC = () => {
         <Label htmlFor="password">Password</Label>
         <Input type="password" id="password" {...register('password')} />
         {errors.password && <Error>{errors.password?.message}</Error>}
-        {state.message && <Error>{state.message}</Error>}
       </InputWrapper>
-      <Button type="submit" disabled={!isValid}>
-        Login
+      <Button type="submit" disabled={!isValid || isLoading} >
+        {!isLoading ? 'Login' : 'Loading...'}
       </Button>
     </Form>
   )

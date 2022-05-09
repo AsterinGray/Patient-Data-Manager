@@ -2,7 +2,7 @@ import api from '@/config/api'
 import { LOGIN } from '@/constants/api-route'
 import { AUTH } from '@/constants/slice'
 
-import { BaseState, LoginRequest, LoginResponse } from '@/types/connection'
+import { BaseState, LoginResponse } from '@/types/connection'
 import { removeAuthentication, setAuthentication } from '@/utils/auth'
 import { createSlice } from '@reduxjs/toolkit'
 import { AxiosResponse } from 'axios'
@@ -42,7 +42,7 @@ const auth = createSlice({
 })
 
 export const login =
-    (value: LoginRequest): AppThunk =>
+    ({ value, successHandler, errorHandler }): AppThunk =>
       async (dispatch: AppDispatch) => {
         try {
           const res: AxiosResponse<LoginResponse, any> = await api.post(
@@ -53,9 +53,13 @@ export const login =
           dispatch(auth.actions.setMessage(res.data.message))
           dispatch(auth.actions.setIsAuthenticate(true))
           setAuthentication(res.data.token)
-        } catch {
-          dispatch(auth.actions.setMessage('Invalid Credential'))
+          successHandler(res.data.message)
+        } catch (e) {
+          console.log(e)
+          const message = e.response.data.message || e.message
+          dispatch(auth.actions.setMessage(message))
           dispatch(auth.actions.setStatus(500))
+          errorHandler(message)
         }
       }
 

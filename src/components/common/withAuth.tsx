@@ -10,7 +10,6 @@ const withAuth = (Component: NextPage) => {
     const router = useRouter()
 
     useEffect(() => {
-      alert('push to login page')
       if(!isAuthenticate) router.push('/login')
     }, [])
 
