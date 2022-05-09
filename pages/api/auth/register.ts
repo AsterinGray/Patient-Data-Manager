@@ -1,11 +1,10 @@
-import bcrypt from 'bcrypt'
-import { NextApiRequest, NextApiResponse } from 'next'
-
 import { POST } from '@/constants/method'
 
 import connectDB from '@/middlewares/database'
 
 import UserModel from '@/models/user'
+import bcrypt from 'bcrypt'
+import { NextApiRequest, NextApiResponse } from 'next'
 
 const register = async (req: NextApiRequest, res: NextApiResponse) => {
   const { method } = req
@@ -28,7 +27,10 @@ const register = async (req: NextApiRequest, res: NextApiResponse) => {
           password,
         })
         const registeredUser = await user.save()
-        return res.status(201).json(registeredUser)
+        return res.status(201).json({
+          message: 'User created successfully',
+          data: registeredUser
+        })
       } catch (err) {
         return res.status(400).json({ message: 'Register Failed' })
       }
