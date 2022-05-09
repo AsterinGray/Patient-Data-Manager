@@ -1,11 +1,10 @@
-import { NextApiRequest, NextApiResponse } from 'next'
-
 import { DELETE, GET, PATCH } from '@/constants/method'
 
 import connectDB from '@/middlewares/database'
 import { validateAuth } from '@/middlewares/validateAuth'
 
 import PatientModel from '@/models/patient'
+import { NextApiRequest, NextApiResponse } from 'next'
 
 const patient = async (req: NextApiRequest, res: NextApiResponse) => {
   const { method } = req

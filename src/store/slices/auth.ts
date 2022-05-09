@@ -11,7 +11,7 @@ import { HYDRATE } from 'next-redux-wrapper'
 import { AppDispatch, AppThunk } from '..'
 
 const initialState: BaseState & { isAuthenticate: boolean, message: string } = {
-  isAuthenticate: true,
+  isAuthenticate: false,
   message: '',
   status: 404,
 }
