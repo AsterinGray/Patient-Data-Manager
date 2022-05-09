@@ -1,8 +1,9 @@
+import { toastConfigType } from '@/types/config'
 import { toast } from 'react-toastify'
 
 export const TOKEN_NAME = process.env.NEXT_PUBLIC_TOKEN_NAME || 'PDM_TOKEN'
 
-export const toastConfig = {
+export const toastConfig: toastConfigType = {
   position: toast.POSITION.TOP_RIGHT,
   autoClose: 5000,
   hideProgressBar: false,

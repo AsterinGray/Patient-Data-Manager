@@ -2,17 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b99f40bd-0c41-4f7c-bc44-04335cf20859" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/types/config.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/api/record/[id].ts" beforeDir="false" afterPath="$PROJECT_DIR$/pages/api/record/[id].ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/api/record/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/pages/api/record/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/patient/[id]/form.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/patient/[id]/form.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/common/RecordData/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/RecordData/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/patient/PatientForm/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/patient/PatientForm/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/record/RecordForm/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/record/RecordForm/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/record/RecordsData/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/record/RecordsData/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/record/TodayRecord/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/record/TodayRecord/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/constants/api-route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants/api-route.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/slices/record.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/slices/record.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/config/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/config/main.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/index.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,7 +75,7 @@
       <workItem from="1647673376079" duration="108000" />
       <workItem from="1651937643208" duration="5535000" />
       <workItem from="1652015732450" duration="11045000" />
-      <workItem from="1652062177850" duration="22980000" />
+      <workItem from="1652062177850" duration="23843000" />
     </task>
     <servers />
   </component>
