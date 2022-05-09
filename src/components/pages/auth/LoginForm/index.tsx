@@ -5,7 +5,7 @@ import { LoginRequest } from '@/types/connection'
 import { LoginFormSchema } from '@/utils/form-schema'
 import { yupResolver } from '@hookform/resolvers/yup'
 import { useRouter } from 'next/dist/client/router'
-import { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { useDispatch, useSelector } from 'react-redux'
 import { toast } from 'react-toastify'
@@ -25,6 +25,10 @@ const LoginForm: React.FC = () => {
     resolver: yupResolver(LoginFormSchema),
     mode: 'onChange',
     reValidateMode: 'onChange',
+  })
+
+  useEffect(() => {
+    if(state.isAuthenticate) router.push('/')
   })
 
   const onSubmit = (value: LoginRequest) => {

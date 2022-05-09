@@ -25,8 +25,11 @@ const patient = async (req: NextApiRequest, res: NextApiResponse) => {
 
   case PATCH:
     try {
-      await PatientModel.findByIdAndUpdate(req.query.id, req.body)
-      return res.status(200).json({ message: 'Patient Updated' })
+      const patient = await PatientModel.findByIdAndUpdate(
+        req.query.id,
+        req.body
+      )
+      return res.status(200).json({ message: `${patient.name} updated` })
     } catch (err) {
       return res.status(404).json({
         message: 'Patient Not Found',
@@ -35,8 +38,12 @@ const patient = async (req: NextApiRequest, res: NextApiResponse) => {
 
   case DELETE:
     try {
-      await PatientModel.findByIdAndDelete(req.query.id)
-      return res.status(200).json({ message: 'Patient Deleted' })
+      const patient = await PatientModel.findByIdAndDelete(req.query.id)
+      const patients = await PatientModel.find(req.query).sort({ name: 1 })
+      return res.status(200).json({
+        message: `${patient.name} deleted`,
+        patients
+      })
     } catch (err) {
       return res.status(404).json({
         message: 'Patient Not Found',

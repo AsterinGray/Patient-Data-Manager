@@ -42,18 +42,22 @@ const record = createSlice({
   },
 })
 
-export const getAllRecord = (updatedAt?: string): AppThunk =>
+export const getAllRecord = ({
+  updatedAt,
+  successHandler,
+  errorHandler
+}): AppThunk =>
   async (dispatch: AppDispatch) => {
     try {
       const res: AxiosResponse<RecordResponse, any> = await api.get(
         GET_RECORD,
-        {
-          params: { updatedAt },
-        }
+        { params: { updatedAt } }
       )
       dispatch(record.actions.setStatus(res.status))
       dispatch(record.actions.setRecords(res.data.records))
-    } catch {
+      successHandler()
+    } catch (e) {
+      errorHandler(e.response.data.message || e.message)
       dispatch(record.actions.setStatus(500))
     }
   }

@@ -20,6 +20,7 @@ const initialState: BaseState & PatientResponse = {
   patients: [],
   patient: {} as Patient,
   status: 404,
+  message: ''
 }
 
 const patient = createSlice({
@@ -70,35 +71,48 @@ export const getPatientById = (id: any): AppThunk =>
     }
   }
 
-export const deletePatient = (id: any): AppThunk =>
+export const deletePatient = ({ id, successHandler, errorHandler }): AppThunk =>
   async (dispatch: AppDispatch) => {
     try {
-      const res: AxiosResponse<PatientResponse, any> =
-        await api.delete(DELETE_PATIENT(id))
+      const res: AxiosResponse<PatientResponse, any> = await api.delete(
+        DELETE_PATIENT(id)
+      )
       dispatch(patient.actions.setStatus(res.status))
       dispatch(patient.actions.setPatients(res.data.patients))
-    } catch {
+      successHandler(res.data.message)
+    } catch (e) {
+      errorHandler(e.response.data.message || e.message)
       dispatch(patient.actions.setStatus(500))
     }
   }
 
-export const editPatient = (id: any, value: Patient): AppThunk =>
+export const editPatient = ({
+  id,
+  value,
+  successHandler,
+  errorHandler
+}): AppThunk =>
   async (dispatch: AppDispatch) => {
     try {
-      await api.patch(
-        EDIT_PATIENT(id),
-        { ...value }
-      )
-    } catch {
+      const res = await api.patch(EDIT_PATIENT(id), { ...value })
+      successHandler(res.data.message)
+    } catch (e) {
+      errorHandler(e.response.data.message || e.message)
       dispatch(patient.actions.setStatus(500))
     }
   }
 
-export const createPatient = (value: Patient): AppThunk =>
+export const createPatient = ({
+  value,
+  successHandler,
+  errorHandler
+}): AppThunk =>
   async (dispatch: AppDispatch) => {
     try {
-      await api.post(CREATE_PATIENT, { ...value })
-    } catch { 
+      const res = await api.post(CREATE_PATIENT, { ...value })
+      successHandler(res.data.message)
+    } catch (e) {
+      errorHandler(e.response.data.message || e.message)
       dispatch(patient.actions.setStatus(500))
     }
   }

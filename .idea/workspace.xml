@@ -3,12 +3,18 @@
   <component name="ChangeListManager">
     <list default="true" id="b99f40bd-0c41-4f7c-bc44-04335cf20859" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/_app.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/_app.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/api/patient/[id]/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/pages/api/patient/[id]/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/patient/[id]/form.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/patient/[id]/form.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/common/PatientData/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/PatientData/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/common/withAuth.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/withAuth.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/pages/auth/LoginForm/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/auth/LoginForm/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/auth/LoginForm/style.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/auth/LoginForm/style.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/config/api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/config/api.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/patient/PatientForm/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/patient/PatientForm/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/record/TodayRecord/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/record/TodayRecord/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/store/slices/auth.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/slices/auth.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/slices/patient.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/slices/patient.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/slices/record.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/slices/record.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/types/connection.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types/connection.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/auth.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/auth.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,7 +84,7 @@
       <workItem from="1647673376079" duration="108000" />
       <workItem from="1651937643208" duration="5535000" />
       <workItem from="1652015732450" duration="11045000" />
-      <workItem from="1652062177850" duration="13391000" />
+      <workItem from="1652062177850" duration="18012000" />
     </task>
     <servers />
   </component>

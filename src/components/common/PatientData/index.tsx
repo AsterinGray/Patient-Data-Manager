@@ -1,6 +1,7 @@
-import { deletePatient, getPatients } from '@/store/slices/patient'
+import { deletePatient } from '@/store/slices/patient'
 import { PatientDataProps } from '@/types/components'
 import React from 'react'
+import { toast } from 'react-toastify'
 
 import { Button, Data, Row } from './style'
 
@@ -10,8 +11,19 @@ const PatientData: React.FC<PatientDataProps> = ({
   dispatch,
 }) => {
   const onDelete = () => {
-    dispatch(deletePatient( patient._id))
-    dispatch(getPatients())
+    dispatch(deletePatient({
+      id: patient._id,
+      successHandler: onDeleteSuccess,
+      errorHandler: onDeleteFail,
+    }))
+  }
+
+  const onDeleteSuccess = (message) => {
+    toast.success(message)
+  }
+
+  const onDeleteFail = (message) => {
+    toast.error(message)
   }
 
   const onEdit = () => {

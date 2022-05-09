@@ -12,16 +12,18 @@ import { PatientFormSchema } from '@/utils/form-schema'
 
 import { yupResolver } from '@hookform/resolvers/yup/dist/yup'
 import { useRouter } from 'next/dist/client/router'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { useDispatch, useSelector } from 'react-redux'
+import { toast } from 'react-toastify'
 
 import { Button, Form, InputWrapper, Label, Select } from './style'
 
 const PatientForm: React.FC = () => {
   const dispatch: AppDispatch = useDispatch()
   const { patient } = useSelector((state: AppState) => state.patient)
-  const route = useRouter()
+  const [isLoading, setIsLoading] = useState(false)
+  const router = useRouter()
 
   const {
     register,
@@ -35,12 +37,12 @@ const PatientForm: React.FC = () => {
   })
 
   useEffect(() => {
-    const id = route.query.id
+    const id = router.query.id
     if (id) dispatch(getPatientById(id))
-  }, [dispatch, route.query.id])
+  }, [dispatch, router.query.id])
 
   useEffect(() => {
-    const id = route.query.id
+    const id = router.query.id
     if (patient && id) {
       setValue('name', patient.name)
       setValue('nik', patient.nik)
@@ -49,16 +51,31 @@ const PatientForm: React.FC = () => {
       setValue('address', patient.address)
       setValue('allergy', patient.allergy)
     }
-  }, [patient, setValue, route.query.id])
+  }, [patient, setValue, router.query.id])
 
   const onSubmit = (value: Patient) => {
+    setIsLoading(true)
     if (patient?._id) {
-      dispatch(editPatient( patient?._id, value))
+      dispatch(editPatient( {
+        id: patient?._id,
+        value,
+        successHandler,
+        errorHandler
+      }))
     } else {
-      dispatch(createPatient(value))
+      dispatch(createPatient({ value, successHandler, errorHandler }))
     }
+  }
 
-    route.push('/')
+  const successHandler = (message) => {
+    setIsLoading(false)
+    router.push('/patient')
+    toast.success(message)
+  }
+
+  const errorHandler = (message) => {
+    toast.error(message)
+    setIsLoading(false)
   }
 
   return (
@@ -101,8 +118,8 @@ const PatientForm: React.FC = () => {
         error={errors.allergy?.message}
       />
 
-      <Button type="submit" disabled={!isValid}>
-        {patient && patient._id ? 'Edit' : 'Submit'}
+      <Button type="submit" disabled={!isValid || isLoading}>
+        {!isLoading ? patient && patient._id ? 'Edit' : 'Submit' : 'Loading...'}
       </Button>
     </Form>
   )

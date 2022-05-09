@@ -10,10 +10,17 @@ import { HYDRATE } from 'next-redux-wrapper'
 
 import { AppDispatch, AppThunk } from '..'
 
-const initialState: BaseState & { isAuthenticate: boolean, message: string } = {
+type LoginStateProps = {
+  isAuthenticate: boolean,
+  message: string,
+  isLoading: boolean
+}
+
+const initialState: BaseState & LoginStateProps = {
   isAuthenticate: false,
   message: '',
   status: 404,
+  isLoading: true
 }
 
 const auth = createSlice({
@@ -22,12 +29,16 @@ const auth = createSlice({
   reducers: {
     setIsAuthenticate(state, { payload }) {
       state.isAuthenticate = payload
+      state.isLoading = false
     },
     setMessage(state, { payload }) {
       state.message = payload
     },
     setStatus(state, { payload }) {
       state.status = payload
+    },
+    setIsLoading(state, { payload }) {
+      state.isLoading = payload
     },
     logout(state) {
       state.isAuthenticate = false

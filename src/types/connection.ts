@@ -12,6 +12,7 @@ export type LoginResponse = {
 export type PatientResponse = {
     patients: Patient[]
     patient: Patient
+    message: string
 }
 
 export type RecordResponse = {

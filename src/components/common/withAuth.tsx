@@ -6,12 +6,17 @@ import { useSelector } from 'react-redux'
 
 const withAuth = (Component: NextPage) => {
   const HOC = (props: any) => {
-    const { isAuthenticate } = useSelector((state: AppState) => state.auth)
+    const {
+      isAuthenticate,
+      isLoading
+    } = useSelector((state: AppState) => state.auth)
     const router = useRouter()
 
     useEffect(() => {
-      if(!isAuthenticate) router.push('/login')
-    }, [])
+      if(!isLoading && !isAuthenticate) {
+        router.push('/login')
+      }
+    }, [isAuthenticate, isLoading, router])
 
     const renderComponent = () => {
       if (isAuthenticate) {
