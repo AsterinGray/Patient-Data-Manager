@@ -13,7 +13,7 @@ export type InputProps = {
 
 export type LayoutProps = {
   children: ReactNode
-  title?: string
+  haveNav?: boolean
 }
 
 export type PatientDataProps = {

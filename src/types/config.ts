@@ -1,6 +1,4 @@
-type Theme = 'light' | 'dark' | 'colored';
-type ToastPosition = 'top-right' | 'top-center' |
-  'top-left' | 'bottom-right' | 'bottom-center' | 'bottom-left';
+import { Theme, ToastPosition } from 'react-toastify'
 
 export type toastConfigType = {
   position: ToastPosition,

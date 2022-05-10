@@ -5,7 +5,7 @@ import React from 'react'
 
 import { Container } from './style'
 
-const Layout: React.FC<LayoutProps> = ({ children, title }) => (
+const Layout: React.FC<LayoutProps> = ({ children }) => (
   <>
     <Head>
       <title>Patient Data Manager</title>

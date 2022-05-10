@@ -1,4 +1,5 @@
 import {
+  background,
   black,
   blue,
   darkGrey2,
@@ -7,17 +8,30 @@ import {
   pink,
   white,
 } from '@/styles/colors'
-import { spacingM, spacingS, spacingXL, spacingXXL5 } from '@/styles/spaces'
+import { spacingM, spacingS, spacingXL, spacingXXL1 } from '@/styles/spaces'
 import styled from 'styled-components'
 
-export const Form = styled.form`
-  padding: ${spacingXXL5};
+export const Container = styled.main`
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  min-height: 100vh;
+  
+  
+`
+
+export const Form = styled.form`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   gap: ${spacingXL};
+  background-color: ${white};
+  padding: ${spacingXXL1} ${spacingXL};
+  border-radius: 8px;
+  
+  @media only screen and (max-width: 468px) {
+    background-color: ${background};
+  }
 `
 
 export const InputWrapper = styled.div`

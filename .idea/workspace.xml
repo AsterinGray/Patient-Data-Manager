@@ -3,7 +3,16 @@
   <component name="ChangeListManager">
     <list default="true" id="b99f40bd-0c41-4f7c-bc44-04335cf20859" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/config/api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/config/api.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/login.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/login.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/common/Layout/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/Layout/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/common/Layout/style.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/Layout/style.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/auth/LoginForm/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/login/LoginForm/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/auth/LoginForm/style.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/login/LoginForm/style.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/middlewares/database.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/middlewares/database.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/colors.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/colors.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/types/components.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types/components.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/types/config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types/config.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,6 +71,12 @@
     <property name="ts.external.directory.path" value="D:\Programming\Project\Personal\patient-data-manager\node_modules\typescript\lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Programming\Project\Personal\patient-data-manager\src\components\pages\login" />
+      <recent name="D:\Programming\Project\Personal\patient-data-manager\src\components\pages" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -73,7 +88,8 @@
       <workItem from="1647673376079" duration="108000" />
       <workItem from="1651937643208" duration="5535000" />
       <workItem from="1652015732450" duration="11045000" />
-      <workItem from="1652062177850" duration="24580000" />
+      <workItem from="1652062177850" duration="25805000" />
+      <workItem from="1652183019527" duration="2874000" />
     </task>
     <servers />
   </component>
