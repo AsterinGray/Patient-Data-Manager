@@ -1,10 +1,11 @@
-import { spacingXL, spacingXXL6 } from '@/styles/spaces'
+import { spacingXXL2, spacingXXL4 } from '@/styles/spaces'
 import styled from 'styled-components'
 
-export const Container = styled.main`
+export const Wrapper = styled.div`
   display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: ${spacingXL} ${spacingXXL6};
-  min-height: 100vh;
+`
+
+export const Container = styled.main`
+  padding: ${spacingXXL4} ${spacingXXL2};
+  width: 100%;
 `

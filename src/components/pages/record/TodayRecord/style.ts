@@ -1,11 +1,14 @@
-import styled from 'styled-components'
-
 import { blue, lightBlue, white } from '@/styles/colors'
 import { spacingM, spacingS } from '@/styles/spaces'
+import styled from 'styled-components'
 
 export const Section = styled.section`
   display: flex;
   flex-direction: column;
+  
+  > h1 {
+    margin: 0;
+  }
 `
 
 export const Row = styled.div<{ head?: boolean }>`

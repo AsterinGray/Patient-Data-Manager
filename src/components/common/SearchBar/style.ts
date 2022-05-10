@@ -1,13 +1,12 @@
-import styled from 'styled-components'
-
 import { blue, pink } from '@/styles/colors'
-import { spacingL, spacingS, spacingXXL2, spacingXXL5 } from '@/styles/spaces'
+import { spacingL, spacingS, spacingXXL5 } from '@/styles/spaces'
+import styled from 'styled-components'
 
 export const Input = styled.input`
   width: 100%;
   padding: ${spacingS} ${spacingL};
   border-radius: ${spacingL};
-  margin: ${spacingXXL2} 0 ${spacingXXL5} 0;
+  margin: 0 0 ${spacingXXL5} 0;
   outline: none;
   border: 2px solid ${blue};
 

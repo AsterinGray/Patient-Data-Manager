@@ -2,17 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b99f40bd-0c41-4f7c-bc44-04335cf20859" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/public/images/home.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/logout.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/people.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/login.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/login.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/common/Layout/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/Layout/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/common/Layout/style.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/Layout/style.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/auth/LoginForm/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/login/LoginForm/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/auth/LoginForm/style.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/login/LoginForm/style.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/middlewares/database.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/middlewares/database.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/colors.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/colors.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/types/components.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types/components.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/types/config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types/config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/common/Navbar/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/Navbar/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/common/Navbar/style.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/Navbar/style.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/common/SearchBar/style.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/SearchBar/style.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/record/TodayRecord/style.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/record/TodayRecord/style.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,6 +72,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Programming\Project\Personal\patient-data-manager\public\images" />
       <recent name="D:\Programming\Project\Personal\patient-data-manager\src\components\pages\login" />
       <recent name="D:\Programming\Project\Personal\patient-data-manager\src\components\pages" />
     </key>
@@ -89,7 +89,7 @@
       <workItem from="1651937643208" duration="5535000" />
       <workItem from="1652015732450" duration="11045000" />
       <workItem from="1652062177850" duration="25805000" />
-      <workItem from="1652183019527" duration="2874000" />
+      <workItem from="1652183019527" duration="6415000" />
     </task>
     <servers />
   </component>
