@@ -2,16 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b99f40bd-0c41-4f7c-bc44-04335cf20859" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/public/images/home.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/logout.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/people.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/common/Layout/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/Layout/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/common/Layout/style.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/Layout/style.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/common/Navbar/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/Navbar/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/common/Navbar/style.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/Navbar/style.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/common/SearchBar/style.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/SearchBar/style.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/record/TodayRecord/style.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/record/TodayRecord/style.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,10 +54,10 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../Documents/Santa Theresia/Express/project-fe-template" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
-    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.eslint" value="" />
     <property name="node.js.selected.package.standard" value="" />
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="prettierjs.PrettierConfiguration.Package" value="D:\Programming\Project\Personal\patient-data-manager\node_modules\prettier" />
@@ -89,7 +84,11 @@
       <workItem from="1651937643208" duration="5535000" />
       <workItem from="1652015732450" duration="11045000" />
       <workItem from="1652062177850" duration="25805000" />
-      <workItem from="1652183019527" duration="6415000" />
+      <workItem from="1652183019527" duration="7816000" />
+      <workItem from="1652197886457" duration="594000" />
+      <workItem from="1652273654629" duration="81000" />
+      <workItem from="1652363214093" duration="655000" />
+      <workItem from="1652363906823" duration="572000" />
     </task>
     <servers />
   </component>

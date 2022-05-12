@@ -22,7 +22,12 @@ export const Wrapper = styled.nav`
     grid-template-columns: 1fr 1.2fr;
     gap: ${spacingS};
     align-items: center;
+    
+    :hover {
+      filter: invert(50%);
+    }
   }
+  
   
   @media only screen and (max-width: 768px) {
     width: 80px;
@@ -46,6 +51,11 @@ export const Button = styled.div`
   align-items: center;
   gap: ${spacingS};
   grid-template-columns: 1fr 1.2fr;
+  
+  :hover {
+    cursor: pointer;
+    filter: invert(50%);
+  }
 
   @media only screen and (max-width: 768px) {
     grid-template-columns: 1fr;
