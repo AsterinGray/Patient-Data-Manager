@@ -2,13 +2,13 @@ import { black, white } from '@/styles/colors'
 import { spacingS, spacingXXL4 } from '@/styles/spaces'
 import styled from 'styled-components'
 
-export const Wrapper = styled.nav`
+export const Wrapper = styled.nav<{isVisible: boolean}>`
   display: flex;
   flex-direction: column;
   align-items: center;
-  position: sticky;
-  left: -100px;
   gap: 20px;
+  position: sticky;
+  left: 0;
   background-color: ${white};
   height: 100vh;
   width: 180px;
@@ -42,9 +42,60 @@ export const Wrapper = styled.nav`
   }
 
   @media only screen and (max-width: 576px) {
-    left: -100px;
+    position: fixed;
+    top: 0;
+    left: ${({isVisible}) => isVisible ? 0 : '-180px'};
+    transition: all 1s;
+    width: 130px;
+
+    a {
+      grid-template-columns: 1fr 1.2fr;
+    }
+
+    span {
+      display: block;
+    }
   }
 `
+
+export const Menu = styled.div`
+  cursor: pointer;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  top: 20px;
+  left: 20px;
+  width: 20px;
+  height: 20px;
+  font-size: 24px;
+  
+  @media only screen and (max-width: 576px) {
+    z-index: 5;
+  }
+`
+
+// export const Hamburger = styled.div`
+//   width: 20px;
+//   height: 2px;
+//   background-color: ${lightGrey};
+//   position: relative;
+//
+//   ::before, ::after {
+//     content: ' ';
+//     width: 20px;
+//     height: 2px;
+//     background-color: ${lightGrey};
+//     position: fixed;
+//   }
+//
+//    ::before {
+//      top: 24px;
+//    }
+//
+//    ::after {
+//      top: 34px;
+//    }
+// `
 
 export const Button = styled.div`
   display: grid;
@@ -63,4 +114,13 @@ export const Button = styled.div`
     span {
       display: none;
     }
+  }
+
+  @media only screen and (max-width: 576px) {
+    grid-template-columns: 1fr 1.2fr;
+
+    span {
+      display: block;
+    }
+  }
 `
