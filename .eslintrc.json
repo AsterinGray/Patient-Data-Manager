@@ -1,8 +1,7 @@
 {
   "extends": [
     "eslint:recommended",
-    "plugin:@typescript-eslint/recommended",
-    "next/core-web-vitals"
+    "plugin:@typescript-eslint/recommended"
   ],
   "parser": "@typescript-eslint/parser",
   "plugins": [
@@ -16,6 +15,7 @@
     "object-curly-spacing": [2, "always"],
     "max-len": ["error", { "code": 80 }],
     "no-multi-spaces": "error",
+    "no-trailing-spaces": "error",
     "no-multiple-empty-lines": ["error", {
       "max": 1,
       "maxEOF": 0
