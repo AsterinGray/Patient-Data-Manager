@@ -9,7 +9,7 @@ import { useDispatch } from 'react-redux'
 
 import { Button, Menu, Wrapper } from './style'
 
-const Navbar = () => {
+const Sidebar = () => {
   const dispatch: AppDispatch = useDispatch()
   const router = useRouter()
   const [isVisible, setIsVisible] = useState(false)
@@ -66,4 +66,4 @@ const Navbar = () => {
   )
 }
 
-export default Navbar
+export default Sidebar

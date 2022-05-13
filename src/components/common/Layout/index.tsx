@@ -1,4 +1,4 @@
-import Navbar from '@/common/Navbar'
+import Sidebar from '@/common/Sidebar'
 import { LayoutProps } from '@/types/components'
 import Head from 'next/head'
 import React from 'react'
@@ -11,7 +11,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => (
       <title>Patient Data Manager</title>
     </Head>
     <Wrapper>
-      <Navbar/>
+      <Sidebar/>
       <Container>{children}</Container>
     </Wrapper>
   </>
