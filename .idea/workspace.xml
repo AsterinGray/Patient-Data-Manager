@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b99f40bd-0c41-4f7c-bc44-04335cf20859" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.eslintrc.json" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintrc.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/patient/PatientForm/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/patient/PatientForm/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/common/PatientData/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/PatientData/index.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,7 +88,7 @@
       <workItem from="1652363906823" duration="5843000" />
       <workItem from="1652406091546" duration="20000" />
       <workItem from="1652449799533" duration="126000" />
-      <workItem from="1652451627565" duration="1462000" />
+      <workItem from="1652451627565" duration="1608000" />
     </task>
     <servers />
   </component>

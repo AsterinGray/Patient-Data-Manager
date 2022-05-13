@@ -33,12 +33,12 @@ const PatientData: React.FC<PatientDataProps> = ({
   const patientDetail = () => {
     route.replace(`/patient/${patient._id}`)
   }
-  
+
   return (
     <Row key={patient._id}>
       <Data>{patient.nik}</Data>
       <Data pointer={true} onClick={() => patientDetail()}>
-        {patient.name}
+        <b>{patient.name}</b>
       </Data>
       <Data>{patient.age}</Data>
       <Data>{patient.gender}</Data>
