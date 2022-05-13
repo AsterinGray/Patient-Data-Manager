@@ -24,6 +24,7 @@ const PatientForm: React.FC = () => {
   const { patient } = useSelector((state: AppState) => state.patient)
   const [isLoading, setIsLoading] = useState(false)
   const router = useRouter()
+  const id = router.query.id || ''
 
   const {
     register,
@@ -37,9 +38,8 @@ const PatientForm: React.FC = () => {
   })
 
   useEffect(() => {
-    const id = router.query.id
     if (id) dispatch(getPatientById(id))
-  }, [dispatch, router.query.id])
+  }, [dispatch, id])
 
   useEffect(() => {
     const id = router.query.id
@@ -119,7 +119,7 @@ const PatientForm: React.FC = () => {
       />
 
       <Button type="submit" disabled={!isValid || isLoading}>
-        {!isLoading ? patient && patient._id ? 'Edit' : 'Submit' : 'Loading...'}
+        {!isLoading ? patient && id ? 'Edit' : 'Submit' : 'Loading...'}
       </Button>
     </Form>
   )

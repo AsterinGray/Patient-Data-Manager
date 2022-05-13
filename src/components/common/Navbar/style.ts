@@ -74,29 +74,6 @@ export const Menu = styled.div`
   }
 `
 
-// export const Hamburger = styled.div`
-//   width: 20px;
-//   height: 2px;
-//   background-color: ${lightGrey};
-//   position: relative;
-//
-//   ::before, ::after {
-//     content: ' ';
-//     width: 20px;
-//     height: 2px;
-//     background-color: ${lightGrey};
-//     position: fixed;
-//   }
-//
-//    ::before {
-//      top: 24px;
-//    }
-//
-//    ::after {
-//      top: 34px;
-//    }
-// `
-
 export const Button = styled.div`
   display: grid;
   align-items: center;
