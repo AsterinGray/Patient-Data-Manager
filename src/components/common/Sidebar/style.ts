@@ -1,19 +1,19 @@
 import { black, white } from '@/styles/colors'
-import { spacingS, spacingXXL4 } from '@/styles/spaces'
+import { spacingS, spacingXXL1, spacingXXL5 } from '@/styles/spaces'
 import styled from 'styled-components'
 
 export const Wrapper = styled.nav<{isVisible: boolean}>`
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px;
+  gap: ${spacingXXL1};
   position: sticky;
   left: 0;
   background-color: ${white};
   height: 100vh;
   width: 180px;
   overflow: hidden;
-  padding: ${spacingXXL4} 0;
+  padding: ${spacingXXL5} 0;
 
   a {
     color: ${black};
@@ -44,7 +44,7 @@ export const Wrapper = styled.nav<{isVisible: boolean}>`
   @media only screen and (max-width: 576px) {
     position: fixed;
     top: 0;
-    left: ${({isVisible}) => isVisible ? 0 : '-180px'};
+    left: ${({ isVisible }) => isVisible ? 0 : '-180px'};
     transition: all 1s;
     width: 130px;
 
