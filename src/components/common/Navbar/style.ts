@@ -1,5 +1,5 @@
 import { white } from '@/styles/colors'
-import { spacingS, spacingXXL4 } from '@/styles/spaces'
+import { spacingS, spacingXXL2, spacingXXL4 } from '@/styles/spaces'
 import styled from 'styled-components'
 
 export const Wrapper = styled.nav`
@@ -8,6 +8,10 @@ export const Wrapper = styled.nav`
   padding: ${spacingS} ${spacingXXL4};
   display: flex;
   align-items: center;
+  
+  @media only screen and (max-width: 768px) {
+    padding: ${spacingS} ${spacingXXL2};
+  }
 `
 
 export const Button = styled.span`
