@@ -2,12 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b99f40bd-0c41-4f7c-bc44-04335cf20859" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/public/images/back.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/common/Navbar/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/common/Navbar/style.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/common/Layout/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/Layout/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/patient/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/patient/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/common/Layout/style.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/Layout/style.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/common/Sidebar/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/Sidebar/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/common/Sidebar/style.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/Sidebar/style.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -94,7 +92,9 @@
       <workItem from="1652363906823" duration="5843000" />
       <workItem from="1652406091546" duration="20000" />
       <workItem from="1652449799533" duration="126000" />
-      <workItem from="1652451627565" duration="3717000" />
+      <workItem from="1652451627565" duration="4449000" />
+      <workItem from="1652496930763" duration="1664000" />
+      <workItem from="1652519727025" duration="6823000" />
     </task>
     <servers />
   </component>

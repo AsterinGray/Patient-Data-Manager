@@ -1,11 +1,10 @@
-import { NextPage } from 'next'
-import { useState } from 'react'
-
 import Layout from '@/common/Layout'
 import SearchBar from '@/common/SearchBar'
 import withAuth from '@/common/withAuth'
 
 import PatientsData from '@/pages/patient/PatientsData'
+import { NextPage } from 'next'
+import { useState } from 'react'
 
 const PatientPage: NextPage = () => {
   const [searchTerm, setSearchTerm] = useState('')

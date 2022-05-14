@@ -7,7 +7,7 @@ import Link from 'next/link'
 import { useState } from 'react'
 import { useDispatch } from 'react-redux'
 
-import { Button, Menu, Wrapper } from './style'
+import { Button, Menu, Nav, Wrapper } from './style'
 
 const Sidebar = () => {
   const dispatch: AppDispatch = useDispatch()
@@ -25,11 +25,8 @@ const Sidebar = () => {
   }
 
   return (
-    <>
-      <Menu onClick={() => onMenuClick()}>
-        {isVisible ? '<' : '>'}
-      </Menu>
-      <Wrapper isVisible={isVisible}>
+    <Wrapper isVisible={isVisible}>
+      <Nav>
         <Link href="/">
           <a>
             <Image
@@ -61,8 +58,9 @@ const Sidebar = () => {
           />
           <span>Logout</span>
         </Button>
-      </Wrapper>
-    </>
+      </Nav>
+      <Menu isVisible={isVisible} onClick={() => onMenuClick()} />
+    </Wrapper>
   )
 }
 
