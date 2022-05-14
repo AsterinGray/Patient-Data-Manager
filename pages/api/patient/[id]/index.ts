@@ -4,6 +4,7 @@ import connectDB from '@/middlewares/database'
 import { validateAuth } from '@/middlewares/validateAuth'
 
 import PatientModel from '@/models/patient'
+import RecordModel from '@/models/record'
 import { NextApiRequest, NextApiResponse } from 'next'
 
 const patient = async (req: NextApiRequest, res: NextApiResponse) => {
@@ -40,6 +41,7 @@ const patient = async (req: NextApiRequest, res: NextApiResponse) => {
     try {
       const patient = await PatientModel.findByIdAndDelete(req.query.id)
       const patients = await PatientModel.find(req.query).sort({ name: 1 })
+      await RecordModel.deleteMany({ patient: patient })
       return res.status(200).json({
         message: `${patient.name} deleted`,
         patients
