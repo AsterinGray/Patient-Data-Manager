@@ -28,8 +28,7 @@ const record = async (req: NextApiRequest, res: NextApiResponse) => {
     try {
       const updatedAt: any = req.query.updatedAt
       let records
-
-      if (!req.query.updatedAt)
+      if (!updatedAt)
         records = await RecordModel.find(req.query).sort({ name: 1 })
       else
         records = await RecordModel.find({
@@ -40,8 +39,9 @@ const record = async (req: NextApiRequest, res: NextApiResponse) => {
 
       return res.status(200).json({ records })
     } catch (err) {
+      console.log(err)
       return res.status(400).json({
-        message: 'Update Record Failed',
+        message: 'Get Record Failed',
       })
     }
 

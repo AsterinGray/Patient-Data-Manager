@@ -5,10 +5,11 @@ import styled from 'styled-components'
 export const Wrapper = styled.aside<{isVisible: boolean}>`
   display: flex;
   align-items: center;
-  position: relative;
+  position: sticky;
   top: 0;
   overflow: hidden;
   transition: all 1s;
+  height: 100vh;
   
   @media only screen and (max-width: 768px) {
     position: fixed;

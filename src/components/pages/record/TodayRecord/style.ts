@@ -13,7 +13,7 @@ export const Section = styled.section`
 
 export const Row = styled.div<{ head?: boolean }>`
   display: grid;
-  grid-template-columns: repeat(4, 1fr) 0.5fr;
+  grid-template-columns: repeat(4, 1fr);
   gap: ${spacingS};
   border-bottom: 1px solid ${blue};
   align-items: center;

@@ -51,6 +51,7 @@ export const getAllRecord = ({
   errorHandler
 }): AppThunk =>
   async (dispatch: AppDispatch) => {
+    console.log('GET ALL RECORD', updatedAt)
     try {
       const res: AxiosResponse<RecordResponse, any> = await api.get(
         GET_RECORD,
@@ -60,6 +61,7 @@ export const getAllRecord = ({
       dispatch(record.actions.setRecords(res.data.records))
       successHandler()
     } catch (e) {
+      console.log(e)
       errorHandler(e.response.data.message || e.message)
       dispatch(record.actions.setStatus(500))
     }
@@ -80,7 +82,7 @@ export const getPatientRecords = (id: any): AppThunk =>
 
 export const deleteRecord = (id: any): AppThunk =>
   async (dispatch: AppDispatch) => {
-    try { 
+    try {
       const res: AxiosResponse<RecordResponse, any> = await api.delete(
         DELETE_RECORD(id)
       )

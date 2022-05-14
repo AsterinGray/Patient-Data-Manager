@@ -9,7 +9,7 @@ import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { toast } from 'react-toastify'
 
-import { Data, Row, Section, Title } from './style'
+import { Row, Section, Title } from './style'
 
 const TodayRecord: React.FC = () => {
   const dispatch: AppDispatch = useDispatch()
@@ -58,7 +58,6 @@ const TodayRecord: React.FC = () => {
         <Title>Penyakit</Title>
         <Title>Pengobatan</Title>
         <Title>Obat</Title>
-        <Data></Data>
       </Row>
       {isLoading ?
         <div>Loading...</div> :
