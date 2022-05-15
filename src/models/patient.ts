@@ -1,6 +1,5 @@
-import { model, models, Schema } from 'mongoose'
-
 import { Patient } from '@/types/models'
+import { model, models, Schema } from 'mongoose'
 
 const PatientSchema = new Schema<Patient>(
   {
@@ -10,7 +9,7 @@ const PatientSchema = new Schema<Patient>(
     },
     nik: {
       type: String,
-      required: true,
+      required: false,
     },
     age: {
       type: Number,
@@ -20,9 +19,13 @@ const PatientSchema = new Schema<Patient>(
       type: String,
       required: true,
     },
+    phoneNumber: {
+      type: String,
+      required: false,
+    },
     address: {
       type: String,
-      required: true,
+      required: false,
     },
     allergy: {
       type: String,

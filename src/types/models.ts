@@ -13,6 +13,8 @@ export type Record = {
   symptoms: string
   treatment: string
   medicine: string
+  honor: number
+  description: string
   createdAt: string
   updatedAt: string
   patient: Patient
@@ -21,10 +23,11 @@ export type Record = {
 export type Patient = {
   _id: string
   name: string
-  nik: string
+  nik?: string
   age: number
   gender: string
-  address: string
+  address?: string
+  phoneNumber?: string
   allergy?: string
   createdAt: string
   updatedAt: string

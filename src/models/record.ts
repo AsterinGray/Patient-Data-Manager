@@ -1,6 +1,5 @@
-import { model, models, Schema } from 'mongoose'
-
 import { Record } from '@/types/models'
+import { model, models, Schema } from 'mongoose'
 
 const RecordSchema = new Schema<Record>(
   {
@@ -15,6 +14,14 @@ const RecordSchema = new Schema<Record>(
     medicine: {
       type: String,
       required: true,
+    },
+    description: {
+      type: String,
+      required: false,
+    },
+    honor: {
+      type: Number,
+      required: true
     },
     patient: {
       type: Schema.Types.ObjectId,
