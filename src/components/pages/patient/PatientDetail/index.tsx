@@ -34,7 +34,7 @@ const PatientDetail = () => {
             <Text>{patient?.age}</Text>
             <Info>Alergi</Info>
             <Text>{patient?.allergy || '-'}</Text>
-            <Info>No. Telp</Info>
+            <Info>Telp</Info>
             <Text>{patient?.phoneNumber || '-'}</Text>
           </Section>
         </>

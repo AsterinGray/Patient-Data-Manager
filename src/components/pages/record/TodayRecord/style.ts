@@ -27,7 +27,7 @@ export const Row = styled.div<{ head?: boolean }>`
   }
   
   @media only screen and (max-width: 576px) {
-    font-size: 12px;
+    font-size: 14px;
     padding: ${spacingS};
   }
 `

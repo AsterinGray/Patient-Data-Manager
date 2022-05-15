@@ -23,7 +23,7 @@ export const Data = styled.div<{ pointer?: boolean }>`
   align-items: center;
   
   @media only screen and (max-width: 576px) {
-    font-size: 12px;
+    font-size: 14px;
   }
 `
 

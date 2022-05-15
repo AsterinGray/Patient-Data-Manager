@@ -2,7 +2,9 @@ import { blue, lightBlue } from '@/styles/colors'
 import { spacingM, spacingS } from '@/styles/spaces'
 import styled from 'styled-components'
 
-export const Section = styled.section``
+export const Section = styled.section`
+  overflow-x: scroll;
+`
 
 export const Row = styled.div<{header?: boolean}>`
   display: grid;
@@ -12,13 +14,24 @@ export const Row = styled.div<{header?: boolean}>`
   border-bottom: 1px solid ${blue};
   gap: ${spacingS};
   align-items: center;
+  font-size: 16px;
   
   :hover {
     background-color: ${({ header }) => !header && lightBlue};
   }
+  
+  @media only screen and (max-width: 576px) {
+    padding: ${spacingS};
+    font-size: 14px;
+    width: 180vw;
+  }
 `
 
-export const Header = styled.div``
+export const Header = styled.div`
+  @media only screen and (max-width: 576px) {
+    font-size: 14px;
+  }
+`
 
 export const Button = styled.div`
   background-color: ${blue};
