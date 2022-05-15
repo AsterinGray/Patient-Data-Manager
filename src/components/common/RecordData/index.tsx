@@ -4,7 +4,7 @@ import { deleteRecord } from '@/store/slices/record'
 import { Record } from '@/types/models'
 import { NextRouter } from 'next/dist/client/router'
 
-import { Button, Data, Row } from './style'
+import { Button, Data } from './style'
 
 const RecordData = (
   record: Record,
@@ -21,18 +21,20 @@ const RecordData = (
   }
 
   return (
-    <Row key={record._id}>
+    <>
       <Data>{record.createdAt.slice(0, 10)}</Data>
       <Data>{record.symptoms}</Data>
       <Data>{record.treatment}</Data>
-      <Data>{record.medicine}</Data>
+      <Data>{record.medicine || '-'}</Data>
+      <Data>{record.description || '-'}</Data>
+      <Data>{record.honor || '-'}</Data>
       <Data>
         <Button onClick={() => onEdit()}>Edit</Button>
         <Button altBg={true} onClick={() => onDelete()}>
           Delete
         </Button>
       </Data>
-    </Row>
+    </>
   )
 }
 

@@ -13,7 +13,7 @@ const RecordSchema = new Schema<Record>(
     },
     medicine: {
       type: String,
-      required: true,
+      required: false,
     },
     description: {
       type: String,
@@ -21,7 +21,7 @@ const RecordSchema = new Schema<Record>(
     },
     honor: {
       type: Number,
-      required: true
+      required: false,
     },
     patient: {
       type: Schema.Types.ObjectId,

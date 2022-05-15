@@ -1,9 +1,11 @@
 import * as yup from 'yup'
 
 export const RecordFormSchema = yup.object().shape({
-  symptoms: yup.string(),
-  treatment: yup.string(),
+  symptoms: yup.string().required('Penyakit wajib diisi'),
+  treatment: yup.string().required('Pengobatan wajib diisi'),
   medicine: yup.string(),
+  description: yup.string(),
+  honor: yup.string(),
 })
 
 export const LoginFormSchema = yup.object().shape({

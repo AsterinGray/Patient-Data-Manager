@@ -1,7 +1,6 @@
-import styled from 'styled-components'
-
 import { black, blue, darkGrey2, orange } from '@/styles/colors'
 import { spacingM, spacingS } from '@/styles/spaces'
+import styled from 'styled-components'
 
 export const InputWrapper = styled.div`
   display: flex;
@@ -13,6 +12,18 @@ export const Label = styled.label`
 `
 
 export const Field = styled.input`
+  padding: ${spacingS} ${spacingM};
+  border: 1px solid ${darkGrey2};
+  border-radius: 8px;
+  outline: none;
+  color: ${black};
+
+  :focus {
+    border: 1px solid ${blue};
+  }
+`
+
+export const TextArea = styled.textarea`
   padding: ${spacingS} ${spacingM};
   border: 1px solid ${darkGrey2};
   border-radius: 8px;

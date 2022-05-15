@@ -1,25 +1,13 @@
-import styled from 'styled-components'
-
 import { blue, mediumPink, white } from '@/styles/colors'
 import { spacingM, spacingS } from '@/styles/spaces'
-
-export const Row = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 2fr 3fr 3fr 1fr;
-  border-bottom: 1px solid ${blue};
-  align-items: center;
-  padding: ${spacingM};
-
-  :hover {
-    background-color: lightBlue;
-  }
-`
+import styled from 'styled-components'
 
 export const Data = styled.div<{ pointer?: boolean }>`
   text-align: left;
   padding: ${spacingS} 0;
   display: grid;
   gap: ${spacingS};
+  white-space: pre-line;
   cursor: ${({ pointer }) => (pointer ? 'pointer' : 'default')};
 `
 

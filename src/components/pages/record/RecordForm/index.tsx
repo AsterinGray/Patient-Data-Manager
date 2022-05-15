@@ -46,6 +46,8 @@ const RecordForm: React.FC<RecordFormProps> = ({ id, patientId }) => {
       setValue('symptoms', record?.symptoms)
       setValue('treatment', record?.treatment)
       setValue('medicine', record?.medicine)
+      setValue('description', record?.description)
+      setValue('honor', record?.honor)
     }
   }, [record, setValue, id])
 
@@ -94,10 +96,24 @@ const RecordForm: React.FC<RecordFormProps> = ({ id, patientId }) => {
         error={errors.treatment?.message}
       />
       <Input
+        textArea={true}
         register={register}
         name="medicine"
         label="Obat"
         error={errors.medicine?.message}
+      />
+      <Input
+        textArea={true}
+        register={register}
+        name="description"
+        label="Keterangan"
+        error={errors.description?.message}
+      />
+      <Input
+        register={register}
+        name="honor"
+        label="#"
+        error={errors.honor?.message}
       />
       <Button type="submit" disabled={!isValid || isLoading}>
         {!isLoading ? id ? 'Edit' : 'Submit' : 'Loading...'}

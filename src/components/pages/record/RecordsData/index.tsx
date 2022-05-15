@@ -8,7 +8,7 @@ import { useRouter } from 'next/dist/client/router'
 import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
-import { Button, Data, Row, Section } from './style'
+import { Button, Header, Row, Section } from './style'
 
 const RecordsData = () => {
   const dispatch: AppDispatch = useDispatch()
@@ -28,22 +28,24 @@ const RecordsData = () => {
 
   const renderData = () => {
     return records.map((record) => {
-      return RecordData(record, route, dispatch, id)
+      return <Row>{RecordData(record, route, dispatch, id)}</Row>
     })
   }
 
   return (
     <Section>
-      <Row>
-        <Data>Tanggal</Data>
-        <Data>Penyakit</Data>
-        <Data>Pengobatan</Data>
-        <Data>Obat</Data>
-        <Data>
+      <Row header={true}>
+        <Header>Tanggal</Header>
+        <Header>Penyakit</Header>
+        <Header>Pengobatan</Header>
+        <Header>Obat</Header>
+        <Header>Keterangan</Header>
+        <Header>#</Header>
+        <Header>
           <Button onClick={() => route.replace(`/patient/${id}/form`)}>
             Create
           </Button>
-        </Data>
+        </Header>
       </Row>
       {records && records.length !== 0 ? renderData() : 'No Data'}
     </Section>

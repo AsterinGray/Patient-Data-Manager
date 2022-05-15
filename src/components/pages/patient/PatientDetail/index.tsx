@@ -5,7 +5,7 @@ import { useRouter } from 'next/dist/client/router'
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
-import { Info, Section, Text } from './style'
+import { Header, Info, Section, Text } from './style'
 
 const PatientDetail = () => {
   const dispatch: AppDispatch = useDispatch()
@@ -19,24 +19,28 @@ const PatientDetail = () => {
   }, [dispatch, route.query.id])
 
   return (
-    <Section>
+    <>
       {patient && (
         <>
-          <Info>NIK</Info>
-          <Text>{patient?.nik}</Text>
-          <Info>Gender</Info>
-          <Text>{patient?.gender}</Text>
-          <Info>Nama</Info>
-          <Text>{patient?.name}</Text>
-          <Info>Alamat</Info>
-          <Text>{patient?.address}</Text>
-          <Info>Umur</Info>
-          <Text>{patient?.age}</Text>
-          <Info>Alergi</Info>
-          <Text>{patient?.allergy}</Text>
+          <Header>{patient.name}</Header>
+          <Section>
+            <Info>NIK</Info>
+            <Text>{patient?.nik || '-'}</Text>
+            <Info>Gender</Info>
+            <Text>{patient.gender}</Text>
+            <Info>Alamat</Info>
+            <Text>{patient?.address || '-'}</Text>
+            <Info>Umur</Info>
+            <Text>{patient?.age}</Text>
+            <Info>Alergi</Info>
+            <Text>{patient?.allergy || '-'}</Text>
+            <Info>No. Telp</Info>
+            <Text>{patient?.phoneNumber || '-'}</Text>
+          </Section>
         </>
-      )}
-    </Section>
+      )
+      }
+    </>
   )
 }
 
