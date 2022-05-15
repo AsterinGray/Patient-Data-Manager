@@ -1,5 +1,5 @@
 import { blue, pink } from '@/styles/colors'
-import { spacingL, spacingS, spacingXXL5 } from '@/styles/spaces'
+import { spacingL, spacingS, spacingXL, spacingXXL5 } from '@/styles/spaces'
 import styled from 'styled-components'
 
 export const Input = styled.input`
@@ -12,5 +12,13 @@ export const Input = styled.input`
 
   :focus {
     border-color: ${pink};
+  }
+  
+  @media only screen and (max-width: 768px) {
+    margin-bottom: ${spacingXL};
+  }
+  
+  @media only screen and (max-width: 576px) {
+    margin-bottom: ${spacingS};
   }
 `

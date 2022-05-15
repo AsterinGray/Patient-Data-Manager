@@ -1,4 +1,4 @@
-import { spacingL, spacingXXL2 } from '@/styles/spaces'
+import { spacingL, spacingS, spacingXXL2 } from '@/styles/spaces'
 import styled from 'styled-components'
 
 export const Wrapper = styled.div`
@@ -17,5 +17,9 @@ export const Container = styled.main`
 
   @media only screen and (max-width: 768px) {
     padding: ${spacingXXL2} ${spacingL};
+  }
+  
+  @media only screen and (max-width: 576px) {
+    padding: ${spacingXXL2} ${spacingS};
   }
 `

@@ -20,6 +20,10 @@ export const Row = styled.div<{header?: boolean}>`
 export const Title = styled.div`
   text-align: left;
   font-size: 20px;
+  
+  @media only screen and (max-width: 576px) {
+    font-size: 14px;
+  }
 `
 
 export const Data = styled.div`

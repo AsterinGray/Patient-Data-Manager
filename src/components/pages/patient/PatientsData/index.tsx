@@ -69,7 +69,7 @@ const PatientsData: React.FC<{ searchTerm?: string }> = ({ searchTerm }) => {
         <Title>Name</Title>
         <Title>Age</Title>
         <Title>Gender</Title>
-        <Title>Phone Num</Title>
+        <Title>Phone</Title>
         <Title>Address</Title>
         <Data>
           <Button onClick={() => onCreate()}>

@@ -21,6 +21,10 @@ export const Data = styled.div<{ pointer?: boolean }>`
   gap: ${spacingS};
   cursor: ${({ pointer }) => (pointer ? 'pointer' : 'default')};
   align-items: center;
+  
+  @media only screen and (max-width: 576px) {
+    font-size: 12px;
+  }
 `
 
 export const Button = styled.div<{ altBg?: boolean }>`

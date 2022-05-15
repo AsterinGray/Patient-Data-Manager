@@ -12,6 +12,10 @@ export const Wrapper = styled.nav`
   @media only screen and (max-width: 768px) {
     padding: ${spacingS} ${spacingXXL2};
   }
+  
+  @media only screen and (max-width: 576px) {
+    padding: ${spacingS};
+  }
 `
 
 export const Button = styled.span`
