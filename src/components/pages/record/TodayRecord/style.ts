@@ -19,6 +19,7 @@ export const Row = styled.div<{ head?: boolean }>`
   align-items: center;
   font-weight: ${({ head }) => (head ? 'bold' : 'normal')};
   padding: ${spacingM};
+  white-space: pre-line;
 
   :hover {
     background-color: ${({ head }) => !head && lightBlue};

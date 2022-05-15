@@ -32,12 +32,14 @@ const PatientsData: React.FC<{ searchTerm?: string }> = ({ searchTerm }) => {
       if (!searchTerm)
         return patients.map((patient) => {
           return (
-            <PatientData
-              key={patient._id}
-              patient={patient}
-              route={route}
-              dispatch={dispatch}
-            />
+            <Row key={patient._id}>
+              <PatientData
+                key={patient._id}
+                patient={patient}
+                route={route}
+                dispatch={dispatch}
+              />
+            </Row>
           )
         })
       else
@@ -45,12 +47,14 @@ const PatientsData: React.FC<{ searchTerm?: string }> = ({ searchTerm }) => {
           .filter((patient) => patient.name.toLowerCase().includes(searchTerm))
           .map((patient) => {
             return (
-              <PatientData
-                key={patient._id}
-                patient={patient}
-                route={route}
-                dispatch={dispatch}
-              />
+              <Row key={patient._id}>
+                <PatientData
+                  key={patient._id}
+                  patient={patient}
+                  route={route}
+                  dispatch={dispatch}
+                />
+              </Row>
             )
           })
     } else {
@@ -60,11 +64,11 @@ const PatientsData: React.FC<{ searchTerm?: string }> = ({ searchTerm }) => {
 
   return (
     <Table>
-      <Row>
-        <Title>NIK</Title>
+      <Row header={true}>
         <Title>Name</Title>
         <Title>Age</Title>
         <Title>Gender</Title>
+        <Title>Phone Num</Title>
         <Title>Address</Title>
         <Data>
           <Button onClick={() => onCreate()}>Create</Button>

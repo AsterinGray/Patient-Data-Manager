@@ -50,6 +50,7 @@ const PatientForm: React.FC = () => {
       setValue('gender', patient.gender)
       setValue('address', patient.address)
       setValue('allergy', patient.allergy)
+      setValue('phoneNumber', patient.phoneNumber)
     }
   }, [patient, setValue, router.query.id])
 
@@ -116,6 +117,12 @@ const PatientForm: React.FC = () => {
         name="allergy"
         label="Alergi"
         error={errors.allergy?.message}
+      />
+      <Input
+        register={register}
+        name="phoneNumber"
+        label="No. Telp"
+        error={errors.phoneNumber?.message}
       />
 
       <Button type="submit" disabled={!isValid || isLoading}>

@@ -3,7 +3,7 @@ import { PatientDataProps } from '@/types/components'
 import React from 'react'
 import { toast } from 'react-toastify'
 
-import { Button, Data, Row } from './style'
+import { Button, Data } from './style'
 
 const PatientData: React.FC<PatientDataProps> = ({
   patient,
@@ -35,21 +35,21 @@ const PatientData: React.FC<PatientDataProps> = ({
   }
 
   return (
-    <Row key={patient._id}>
-      <Data>{patient.nik}</Data>
+    <>
       <Data pointer={true} onClick={() => patientDetail()}>
         <b>{patient.name}</b>
       </Data>
       <Data>{patient.age}</Data>
       <Data>{patient.gender}</Data>
-      <Data>{patient.address}</Data>
+      <Data>{patient.phoneNumber || '-'}</Data>
+      <Data>{patient.address || '-'}</Data>
       <Data>
         <Button onClick={() => onEdit()}>Edit</Button>
         <Button altBg={true} onClick={() => onDelete()}>
           Delete
         </Button>
       </Data>
-    </Row>
+    </>
   )
 }
 
