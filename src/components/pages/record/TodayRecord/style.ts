@@ -25,18 +25,20 @@ export const Row = styled.div<{ head?: boolean }>`
     background-color: ${({ head }) => !head && lightBlue};
     cursor: ${({ head }) => !head && 'pointer'};
   }
+  
+  @media only screen and (max-width: 576px) {
+    font-size: 12px;
+    padding: ${spacingS};
+  }
 `
 
 export const Title = styled.div`
   text-align: left;
   font-size: 20px;
-`
-
-export const Data = styled.div`
-  text-align: left;
-  padding: ${spacingS} 0;
-  display: grid;
-  gap: ${spacingS};
+  
+  @media only screen and (max-width: 576px) {
+    font-size: 14px;
+  }
 `
 
 export const Button = styled.div`
