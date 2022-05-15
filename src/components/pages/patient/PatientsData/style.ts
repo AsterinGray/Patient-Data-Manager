@@ -1,4 +1,4 @@
-import { blue, white } from '@/styles/colors'
+import { blue } from '@/styles/colors'
 import { spacingM, spacingS } from '@/styles/spaces'
 import styled from 'styled-components'
 
@@ -20,7 +20,6 @@ export const Row = styled.div<{header?: boolean}>`
 export const Title = styled.div`
   text-align: left;
   font-size: 20px;
-  margin-bottom: ${spacingM};
 `
 
 export const Data = styled.div`
@@ -38,9 +37,14 @@ export const Text = styled.h1`
 
 export const Button = styled.div`
   background-color: ${blue};
-  padding: ${spacingS} ${spacingM};
+  padding: ${spacingS} 0;
   border-radius: ${spacingS};
-  text-align: center;
-  color: ${white};
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  span {
+    filter: invert(100);
+  }
 `

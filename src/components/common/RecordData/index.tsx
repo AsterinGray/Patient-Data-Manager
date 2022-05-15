@@ -3,6 +3,7 @@ import { deleteRecord } from '@/store/slices/record'
 
 import { Record } from '@/types/models'
 import { NextRouter } from 'next/dist/client/router'
+import Image from 'next/image'
 
 import { Button, Data } from './style'
 
@@ -29,9 +30,21 @@ const RecordData = (
       <Data>{record.description || '-'}</Data>
       <Data>{record.honor || '-'}</Data>
       <Data>
-        <Button onClick={() => onEdit()}>Edit</Button>
+        <Button onClick={() => onEdit()}>
+          <Image
+            src={'/images/edit.svg'}
+            width={20}
+            height={20}
+            alt={'Edit Icon'}
+          />
+        </Button>
         <Button altBg={true} onClick={() => onDelete()}>
-          Delete
+          <Image
+            src={'/images/delete.svg'}
+            width={20}
+            height={20}
+            alt={'Delete Icon'}
+          />
         </Button>
       </Data>
     </>

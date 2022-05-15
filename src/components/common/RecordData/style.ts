@@ -1,5 +1,5 @@
-import { blue, mediumPink, white } from '@/styles/colors'
-import { spacingM, spacingS } from '@/styles/spaces'
+import { blue, mediumPink } from '@/styles/colors'
+import { spacingS } from '@/styles/spaces'
 import styled from 'styled-components'
 
 export const Data = styled.div<{ pointer?: boolean }>`
@@ -13,10 +13,14 @@ export const Data = styled.div<{ pointer?: boolean }>`
 
 export const Button = styled.div<{ altBg?: boolean }>`
   background-color: ${({ altBg }) => (altBg ? mediumPink : blue)};
-  padding: ${spacingS} ${spacingM};
+  padding: ${spacingS} 0;
   border-radius: ${spacingS};
-  text-align: center;
-  color: ${white};
   cursor: pointer;
-  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  span {
+    filter: invert(100);
+  }
 `

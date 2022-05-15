@@ -1,7 +1,6 @@
-import styled from 'styled-components'
-
-import { blue, mediumPink, white } from '@/styles/colors'
+import { blue, mediumPink } from '@/styles/colors'
 import { spacingM, spacingS } from '@/styles/spaces'
+import styled from 'styled-components'
 
 export const Row = styled.div`
   display: grid;
@@ -21,14 +20,19 @@ export const Data = styled.div<{ pointer?: boolean }>`
   display: grid;
   gap: ${spacingS};
   cursor: ${({ pointer }) => (pointer ? 'pointer' : 'default')};
+  align-items: center;
 `
 
 export const Button = styled.div<{ altBg?: boolean }>`
   background-color: ${({ altBg }) => (altBg ? mediumPink : blue)};
-  padding: ${spacingS} ${spacingM};
+  padding: ${spacingS} 0;
   border-radius: ${spacingS};
-  text-align: center;
-  color: ${white};
   cursor: pointer;
-  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  span {
+    filter: invert(100);
+  }
 `

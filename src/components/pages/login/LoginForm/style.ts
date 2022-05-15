@@ -5,7 +5,6 @@ import {
   darkGrey2,
   lightGrey,
   orange,
-  pink,
   white,
 } from '@/styles/colors'
 import { spacingM, spacingS, spacingXL, spacingXXL1 } from '@/styles/spaces'
@@ -68,7 +67,7 @@ export const Button = styled.button`
   outline: none;
   border: none;
   cursor: pointer;
-  background-color: ${pink};
+  background-color: ${blue};
   color: ${white};
   padding: 0.5rem 3rem;
   margin-top: 1rem;

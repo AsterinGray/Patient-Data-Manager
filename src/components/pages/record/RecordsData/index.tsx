@@ -5,6 +5,8 @@ import { getPatientRecords } from '@/store/slices/record'
 
 import { RecordResponse } from '@/types/connection'
 import { useRouter } from 'next/dist/client/router'
+
+import Image from 'next/image'
 import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
@@ -43,7 +45,12 @@ const RecordsData = () => {
         <Header>#</Header>
         <Header>
           <Button onClick={() => route.replace(`/patient/${id}/form`)}>
-            Create
+            <Image
+              src={'/images/add.svg'}
+              width={20}
+              height={20}
+              alt={'Add Icon'}
+            />
           </Button>
         </Header>
       </Row>

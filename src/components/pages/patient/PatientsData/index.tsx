@@ -7,6 +7,7 @@ import { getPatients } from '@/store/slices/patient'
 import { PatientResponse } from '@/types/connection'
 
 import { useRouter } from 'next/dist/client/router'
+import Image from 'next/image'
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
@@ -71,7 +72,14 @@ const PatientsData: React.FC<{ searchTerm?: string }> = ({ searchTerm }) => {
         <Title>Phone Num</Title>
         <Title>Address</Title>
         <Data>
-          <Button onClick={() => onCreate()}>Create</Button>
+          <Button onClick={() => onCreate()}>
+            <Image
+              src={'/images/add.svg'}
+              width={20}
+              height={20}
+              alt={'Add Icon'}
+            />
+          </Button>
         </Data>
       </Row>
       {renderData()}

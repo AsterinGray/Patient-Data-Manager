@@ -1,5 +1,6 @@
 import { deletePatient } from '@/store/slices/patient'
 import { PatientDataProps } from '@/types/components'
+import Image from 'next/image'
 import React from 'react'
 import { toast } from 'react-toastify'
 
@@ -44,9 +45,21 @@ const PatientData: React.FC<PatientDataProps> = ({
       <Data>{patient.phoneNumber || '-'}</Data>
       <Data>{patient.address || '-'}</Data>
       <Data>
-        <Button onClick={() => onEdit()}>Edit</Button>
+        <Button onClick={() => onEdit()}>
+          <Image
+            src={'/images/edit.svg'}
+            width={20}
+            height={20}
+            alt={'Edit Icon'}
+          />
+        </Button>
         <Button altBg={true} onClick={() => onDelete()}>
-          Delete
+          <Image
+            src={'/images/delete.svg'}
+            width={20}
+            height={20}
+            alt={'Delete Icon'}
+          />
         </Button>
       </Data>
     </>
