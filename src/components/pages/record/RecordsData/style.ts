@@ -3,7 +3,9 @@ import { spacingM, spacingS } from '@/styles/spaces'
 import styled from 'styled-components'
 
 export const Section = styled.section`
-  overflow-x: scroll;
+  @media only screen and (max-width: 576px) {
+    overflow-x: scroll;
+  }
 `
 
 export const Row = styled.div<{header?: boolean}>`
