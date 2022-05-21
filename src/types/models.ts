@@ -13,7 +13,7 @@ export type Record = {
   symptoms: string
   treatment: string
   medicine: string
-  honor: number
+  honor: string
   description: string
   createdAt: string
   updatedAt: string

@@ -20,7 +20,7 @@ const RecordSchema = new Schema<Record>(
       required: false,
     },
     honor: {
-      type: Number,
+      type: String,
       required: false,
     },
     patient: {
